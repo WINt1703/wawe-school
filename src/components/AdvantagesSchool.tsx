@@ -8,7 +8,7 @@ import Surfing from "../assets/surfing.svg"
 
 const AdvantagesSchool: FC = () => {
   return (
-    <div className="grid h-screen place-content-center">
+    <div className="grid h-full place-content-center">
       <div className="title">AT SCHOOL YOU WILL GET</div>
       <div className="flex justify-center">
         <div className="inline-block space-y-20">

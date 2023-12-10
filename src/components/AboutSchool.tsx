@@ -2,9 +2,9 @@ import { FC } from "react"
 
 const AboutSchool: FC = () => {
   return (
-    <div className="grid h-screen w-full place-content-center">
+    <div className="grid h-full w-full place-items-center">
       <div className="title">ABOUT THE SCHOOL, ABOUT SURFING, ABOUT THE CANARIES</div>
-      <div className="mt-5 flex space-x-20">
+      <div className="flex space-x-20">
         <p className="description w-96">
           Our surf school teachers are among the best surfers in the Canary Islands. Among them is the European longboard champion, who will happily share his experience with both beginners and more experienced surfers. All members of the teaching staff are certified members of the Canary Islands Surfing Federation. Some of them know Russian, which definitely positions us as a Russian surf school abroad!
           <br />
