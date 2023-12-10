@@ -1,7 +1,8 @@
 import { FC } from "react"
+import Introduce from "./components/Introduce"
 
 const App: FC = () => {
-  return <div className="bg-white dark:bg-black">Hellow world</div>
+  return <Introduce />
 }
 
 export default App
