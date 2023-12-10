@@ -1,10 +1,10 @@
 import { FC } from "react"
-import Airplane from "../../assets/airplane.svg"
-import LongWaWe from "../../assets/long_wawe.svg"
-import MiddleWaWe from "../../assets/middle_wawe.svg"
-import ShortWaWe from "../../assets/short_wawe.svg"
-import SunSee from "../../assets/sun_see.svg"
-import Surfing from "../../assets/surfing.svg"
+import Airplane from "../assets/airplane.svg"
+import LongWaWe from "../assets/long_wawe.svg"
+import MiddleWaWe from "../assets/middle_wawe.svg"
+import ShortWaWe from "../assets/short_wawe.svg"
+import SunSee from "../assets/sun_see.svg"
+import Surfing from "../assets/surfing.svg"
 
 const AdvantagesSchool: FC = () => {
   return (
