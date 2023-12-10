@@ -5,9 +5,10 @@
 
 @layer components {
   .title {
+    position: relative;
     color: #01353E;
     font-family: Raleway;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 800;
     letter-spacing: 0.6px;
     text-align: center;
