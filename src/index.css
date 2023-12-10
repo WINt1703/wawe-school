@@ -2,3 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap');
+
+@layer components {
+  .title {
+    color: #01353E;
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-align: center;
+  }
+
+  .title::after {
+    color: #00B2A0;
+    font-family: Raleway;
+    font-size: 50px;
+    position: absolute;   
+    content: "/";
+  }
+  
+  .description {
+    color: #242121;
+    font-family: Roboto Condensed;
+    font-size: 10px;
+
+    line-height: 18px;
+    letter-spacing: 0.6px;
+  }
+}
