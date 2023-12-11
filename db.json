@@ -1,0 +1,34 @@
+{
+  "gallery": {
+    "currentCategory": "All",
+    "categories": [
+      {
+        "name": "All",
+        "photos": [
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sBucHwAICksp5x2-7H3HPAHaE8%26pid%3DApi&f=1&ipt=c5fa2d0e393c9c54639ba22c8e9a11f36a12b18029f6daf2fbab79f57625936a&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.rQskGUsYMBhR0OrvvzrwKwHaEK%26pid%3DApi&f=1&ipt=250f8b0595b746427a7537367a34deda1dcb85202e5f9614fbbf9435fec5b98d&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.NbiGQwcMS4rFn4jPhi7xoQHaE8%26pid%3DApi&f=1&ipt=19dd7ed20fc36ec9753daf0e0d3d0fd857870e18cf5e1b91d31bf4fa0e59eade&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.3bPmT2DtRpRh080MjH8UPwHaFj%26pid%3DApi&f=1&ipt=9071f58207c71ec17c8eccde7d08343b37450e2b40504588a05748e128ffe52c&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VL4gVujzHFiDXi8H0LXKugHaEf%26pid%3DApi&f=1&ipt=04f46c73a3b43eba704275b51da906482f6f954a7a9b6c63fe39df4f7c6774bb&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.zfVBFnncSFp03vnN5m8T7AHaEK%26pid%3DApi&f=1&ipt=db7ade91f9fb92fbd73a8e6891f330b6dae37f3169818bd8bbe5eb5eaa5f082b&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.F7FTgZ8tJrsCuIeXPQuf0gHaEo%26pid%3DApi&f=1&ipt=dbc9f497359ee7f0be6657d10c2b5d3570fffff4c7b77b90b1f317941f828770&ipo=images",
+          "https://www.carvemag.com/wp-content/uploads/2016/03/Press-7.jpg"
+        ]
+      },
+      {
+        "name": "Tourism",
+        "photos": [
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.DalpJVu5uLHnwM_T7rYOKwHaE8%26pid%3DApi&f=1&ipt=53f04a105224606201e2ac265a4345ecdd85e151a41308a824b0f6254fc1f8fc&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.yQV9YN97q7-pD-MDLHFaJAHaEK%26pid%3DApi&f=1&ipt=a815bb8ebf7f9cc2a7b2f3728aaa95ec673b76af9ae06f80720422509a99eb5f&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.RNCQyNWNTaFBeT0yK7wH_gHaE8%26pid%3DApi&f=1&ipt=e14591364ba70d4522bfa368299f117bf58d5cf16fae92c1a466b28a98422b7e&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.AXnK8083eV4vlFzAmxx9YQHaEo%26pid%3DApi&f=1&ipt=3308eab20886f6d5fabbbff700188c542fc297b67bdbf687d216ec6d78791ed1&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.-ROljymzLkXx955xlk6SeAHaE8%26pid%3DApi&f=1&ipt=2d3c6d80b6a7c864ce9bb32ac9be61e91b78689be23a4602a51968f198de7bc1&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.uHdPrTuL0sfbb4TWfgc51wHaEK%26pid%3DApi&f=1&ipt=e80169507f3eb20dbed94bfc3034a8a60c50620331a3bc70b6548ba57246e30e&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.rfIbblPiXNgwPIK9MBgf2wHaE7%26pid%3DApi&f=1&ipt=68dafd652782bc9f5de7a98866ad47f7b903d65cf603b267867ef1e16a42f929&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.E81rQ5WiQoZuZpFMXGXqDAHaE8%26pid%3DApi&f=1&ipt=ee7efab7c4bce29a528592d207f50810890a11ff86cf1f86c1f0daddfbf4e428&ipo=images",
+          "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.o15j8LyR4z95ojlF0BC6owHaE8%26pid%3DApi&f=1&ipt=20761afdd17f10c9c7f6c1f80141a7677c2008ecb14f931e6cdbb88174097d46&ipo=images"
+        ]
+      }
+    ]
+  }
+}
