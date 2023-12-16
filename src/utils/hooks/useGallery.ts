@@ -1,12 +1,12 @@
 import useSWR, { SWRResponse } from "swr"
 import fetcher from "./fetcher"
 
-export interface Gallery {
+interface Gallery {
   currentCategory: string
   categories: Category[]
 }
 
-interface Category {
+export interface Category {
   name: string
   photos: string[]
 }

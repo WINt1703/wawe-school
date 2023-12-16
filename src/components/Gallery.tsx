@@ -1,5 +1,5 @@
 import { FC, useState } from "react"
-import { Category } from "../utils/models/galleryModels"
+import { Category } from "../utils/hooks/useGallery"
 
 type GalleryProps = {
   currentCategory?: string
