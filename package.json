@@ -10,6 +10,7 @@
     "swr": "^2.2.4"
   },
   "scripts": {
+    "react_mock": "json-server --watch db.json --port 3001 & react-scripts start",
     "start_mock": "json-server --watch db.json --port 3001",
     "start": "react-scripts start",
     "build": "react-scripts build",
