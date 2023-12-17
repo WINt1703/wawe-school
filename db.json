@@ -70,5 +70,49 @@
       "jobPosition": "Instructor",
       "photo": "http://www.robert-harrington.com/photos/100924surfers/images/surf_7066.jpg"
     }
+  ],
+  "plans": [
+    {
+      "id": 1,
+      "name": "Beginner Package",
+      "price": 50,
+      "benefits": [
+        "2 hours of personalized instruction with certified surf instructor",
+        "Surfboard rental included",
+        "Complimentary refreshing drink after the lesson",
+        "Basic safety and beach awareness briefing",
+        "Introduction to fundamental surfing techniques",
+        "Opportunity for guided practice in the shallow waves",
+        "Discount voucher for future lessons"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Intermediate Package",
+      "price": 80,
+      "benefits": [
+        "4 hours of intensive coaching with experienced surf instructor",
+        "High-quality professional surfboard rental",
+        "Capture your progress with a complimentary photo session",
+        "Advanced techniques for maneuvering on the waves",
+        "In-depth understanding of wave patterns and surf etiquette",
+        "Individualized tips for improvement based on skill level",
+        "Exclusive discount on surf equipment purchase"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "VIP Package",
+      "price": 120,
+      "benefits": [
+        "Full day of personalized coaching with a top-rated surf instructor",
+        "Premium surfboard provided for the entire duration",
+        "Professional photoshoot to capture your surfing experience",
+        "Access to private surf spots with fewer crowds",
+        "Advanced training on challenging waves for experienced surfers",
+        "Exclusive VIP lounge access with refreshments",
+        "Customized surf fitness and wellness program"
+      ]
+    }
   ]
 }
