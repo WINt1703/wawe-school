@@ -9,12 +9,11 @@ type CarouselProps = {
 
 const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
   const { hash } = useLocation()
-  const [selectedSlide, setSelectedSlide] = useState(
-    hash.slice(1) ?? itemTag + slides[0].id
-  )
+  const [selectedSlide, setSelectedSlide] = useState<string>()
 
   useEffect(() => {
-    setSelectedSlide(hash.slice(1))
+    const href = hash.slice(1)
+    setSelectedSlide(href === "" ? itemTag + slides[0].id : href)
   }, [hash])
 
   return (
