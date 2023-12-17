@@ -50,5 +50,25 @@
       "theme": "Embrace the Relaxed Surf Lifestyle by the Sea",
       "description": "Immerse yourself in a laid-back surf lifestyle. Enjoy endless waves, sunny days, and the beauty of coastal living."
     }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "jobPosition": "Chief Instructor",
+      "photo": "https://i.pinimg.com/originals/64/f8/8b/64f88bb5a74a13093029d7ea487bb8c2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "jobPosition": "Instructor",
+      "photo": "https://i.pinimg.com/736x/41/3a/d6/413ad69dc7f9dd6197e70da4dfc3f464.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "jobPosition": "Instructor",
+      "photo": "http://www.robert-harrington.com/photos/100924surfers/images/surf_7066.jpg"
+    }
   ]
 }
