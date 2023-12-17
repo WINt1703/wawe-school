@@ -114,5 +114,16 @@
         "Customized surf fitness and wellness program"
       ]
     }
-  ]
+  ],
+  "location": {
+    "zoomCenter": {
+      "lat": 29.0658,
+      "lng": -13.643
+    },
+    "ourLocation": {
+      "lat": 29.11741,
+      "lng": -13.63976
+    },
+    "surfingHousePhoto": "https://bluewavesmorocco.com/wp-content/uploads/2017/03/blue-waves-chill-out-in-anza.jpg"
+  }
 }
