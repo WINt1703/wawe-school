@@ -24,15 +24,16 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
           <div
             id={itemTag + s.id}
             key={s.id}
-            className="relative carousel-item h-full w-full"
+            className="carousel-item relative h-full w-full"
           >
             <img
-              className="absolute brightness-50 absolute h-full w-full object-cover"
+              alt={s.theme}
+              className="absolute h-full w-full object-cover brightness-50"
               src={s.photo}
             />
-            <p className="absolute  text-white top-2/4 left-2/4 max-w-md text-3xl">
+            <p className="absolute left-2/4 top-2/4 max-w-md text-3xl text-white">
               {s.theme}
-              <div className="text-white description">{s.description}</div>
+              <div className="description text-white">{s.description}</div>
             </p>
           </div>
         ))}
