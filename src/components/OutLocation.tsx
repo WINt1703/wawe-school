@@ -1,7 +1,6 @@
 import { FC } from "react"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
-import useOutLocation from "../../utils/hooks/useOutLocation"
-import "./OutLocation.css"
+import useOutLocation from "../utils/hooks/useOutLocation"
 
 const OutLocation: FC = () => {
   const { location } = useOutLocation()
