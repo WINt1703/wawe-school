@@ -22,7 +22,7 @@ const OutLocation: FC = () => {
         <Marker position={[location.ourLocation.lat, location.ourLocation.lng]}>
           <Popup>
             <img
-              className="h-64 w-64 object-cover"
+              className="h-64 w-64 rounded-md object-cover"
               src={location.surfingHousePhoto}
               alt="surfing center"
             />
