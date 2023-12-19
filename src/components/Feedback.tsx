@@ -43,9 +43,12 @@ const Feedback: FC = () => {
     <div className="space-y-28">
       <p className="title">Feedback</p>
       <div className="flex flex-col items-center justify-center gap-7 lg:flex-row">
-        <form onSubmit={handleSubmit(onSubmit)} className="form-control">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="form-control w-full max-w-sm"
+        >
           <Input
-            className="h-9 w-96 "
+            className="h-9 w-full"
             placeholder="Name"
             error={errors.name}
             {...register("name", {
@@ -65,7 +68,7 @@ const Feedback: FC = () => {
             })}
           />
           <Input
-            className="h-9 w-96"
+            className="h-9 w-full"
             placeholder="Phone"
             error={errors.phone}
             {...register("phone", {
@@ -81,7 +84,7 @@ const Feedback: FC = () => {
           />
           <Input
             textarea
-            className="h-32 w-96 resize-none overflow-scroll align-top"
+            className="h-32 w-full resize-none overflow-scroll align-top"
             placeholder="Leave a message and we will contact you shortly"
             error={errors.feedback}
             {...register("feedback", {
@@ -99,7 +102,7 @@ const Feedback: FC = () => {
             Send
           </Button>
         </form>
-        <p className="w-full max-w-[600px] bg-gray-100 p-12 text-center lg:text-start">
+        <p className="h-full w-full max-w-[600px] bg-gray-100 p-12 text-center lg:text-start">
           Have a question?
           <br />
           You can contact us:
