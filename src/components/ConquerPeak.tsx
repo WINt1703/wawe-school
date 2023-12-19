@@ -3,7 +3,7 @@ import Peak from "../assets/surfing_peak.svg"
 
 const ConquerPeak: FC = () => {
   return (
-    <div className="grid h-full lg:grid-cols-2">
+    <div className="grid lg:grid-cols-2">
       <div className="m-auto inline-block max-w-[500px] space-y-20">
         <p className="title">CONQUER THE PEAKS</p>
         <p className="description">
