@@ -15,7 +15,7 @@ type ReturnTeamType = Omit<SWRResponse, "data"> & {
 function useTeam(): ReturnTeamType {
   const { data, error, isLoading, isValidating, mutate } = useSWR<
     Array<Teammate>
-  >("/team", fetcher)
+  >("team", fetcher)
 
   return {
     error: error,

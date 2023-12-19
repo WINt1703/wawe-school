@@ -12,7 +12,7 @@ type ReturnBlogType = Omit<SWRResponse, "data"> & { slides?: Array<Slide> }
 
 function useBlog(): ReturnBlogType {
   const { data, error, isLoading, isValidating, mutate } = useSWR<Array<Slide>>(
-    "/blog_slides",
+    "blog_slides",
     fetcher
   )
 

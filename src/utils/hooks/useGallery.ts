@@ -11,10 +11,15 @@ export interface Category {
   photos: string[]
 }
 
-type ReturnGalleryType = Omit<SWRResponse<Gallery>, "data"> & { gallery?: Gallery }
+type ReturnGalleryType = Omit<SWRResponse<Gallery>, "data"> & {
+  gallery?: Gallery
+}
 
 function useGallery(): ReturnGalleryType {
-  const { data, error, isLoading, isValidating, mutate } = useSWR<Gallery>("/gallery", fetcher)
+  const { data, error, isLoading, isValidating, mutate } = useSWR<Gallery>(
+    "gallery",
+    fetcher
+  )
 
   return {
     error: error,

@@ -16,7 +16,7 @@ type ReturnLocationType = Omit<SWRResponse, "data"> & { location?: OurLocation }
 
 function useOutLocation(): ReturnLocationType {
   const { data, error, isLoading, isValidating, mutate } = useSWR<OurLocation>(
-    "/location",
+    "location",
     fetcher
   )
 

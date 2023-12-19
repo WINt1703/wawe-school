@@ -12,7 +12,7 @@ type ReturnPlansType = Omit<SWRResponse, "data"> & { plans?: Array<Plan> }
 
 function usePlans(): ReturnPlansType {
   const { data, error, isLoading, isValidating, mutate } = useSWR<Array<Plan>>(
-    "/plans",
+    "plans",
     fetcher
   )
 
