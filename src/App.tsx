@@ -13,10 +13,22 @@ import ResortStats from "./components/ResortStats"
 import Team from "./components/Team"
 import Video from "./components/Video"
 
+const aboutId = "about"
+const servicesId = "service"
+const priceId = "price"
+const teamId = "team"
+const contactsId = "contacts"
+
 const App: FC = () => {
   return (
     <>
-      <Introduce />
+      <Introduce
+        aboutHref={`#${aboutId}`}
+        servicesHref={`#${servicesId}`}
+        priceHref={`#${priceId}`}
+        teamHref={`#${teamId}`}
+        contactsHref={`#${contactsId}`}
+      />
       <AboutSchool />
       <AdvantagesSchool />
       <ConquerPeak />
