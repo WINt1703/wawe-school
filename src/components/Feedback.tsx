@@ -87,7 +87,11 @@ const Feedback: FC = () => {
               },
             })}
           />
-          <Button loading={sending} className="m-auto lg:mt-auto" type="submit">
+          <Button
+            loading={sending}
+            className="mx-auto mt-5 lg:mx-0"
+            type="submit"
+          >
             Send
           </Button>
         </form>
