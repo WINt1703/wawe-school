@@ -11,8 +11,10 @@ type InputProp = InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> &
 const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProp>(
   ({ className, error, textarea, ...rest }, ref) => {
     const styledClassName = `${className ?? ""} ${
-      error ? "text-red-400 focus:border-red-600 placeholder:text-red-500" : ""
-    } w-64 rounded-none border-0 !border-b-2 text-teal-400 placeholder:text-teal-500 focus:outline-none`
+      error
+        ? "text-red-400 focus:border-red-600 placeholder:text-red-500"
+        : "text-teal-400 placeholder:text-teal-500"
+    } w-64 rounded-none border-0 !border-b-2 focus:outline-none`
 
     return (
       <>

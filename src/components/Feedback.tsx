@@ -57,7 +57,10 @@ const Feedback: FC = () => {
                 message:
                   "Name should consist of letters and may include dashes or spaces.",
               },
-              maxLength: 20,
+              maxLength: {
+                value: 20,
+                message: "Max length for name is 20 symbols",
+              },
             })}
           />
           <Input
@@ -110,6 +113,7 @@ const Feedback: FC = () => {
           35660
         </p>
       </div>
+      <div></div>
     </div>
   )
 }
