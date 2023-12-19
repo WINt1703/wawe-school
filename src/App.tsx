@@ -37,7 +37,9 @@ const App: FC = () => {
       </section>
       <ConquerPeak />
       <Quote />
-      <Video />
+      <div className="flex  justify-center">
+        <Video />
+      </div>
       <ResortStats tourists={1000} hours={555} trainings={10_000} days={365} />
       <Blog />
       <section id={teamId}>
