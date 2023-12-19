@@ -36,9 +36,11 @@ const App: FC = () => {
         <AdvantagesSchool />
       </section>
       <ConquerPeak />
-      <Quote />
+      <div className="bg-gray-100 py-10">
+        <Quote />
+      </div>
       <div className="flex  justify-center">
-        <Video />
+        <Video />d
       </div>
       <ResortStats tourists={1000} hours={555} trainings={10_000} days={365} />
       <Blog />
