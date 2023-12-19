@@ -6,9 +6,14 @@ type ResortStatsProps = {
   trainings: number
   days: number
 }
-const ResortStats: FC<ResortStatsProps> = ({ days, hours, tourists, trainings }) => {
+const ResortStats: FC<ResortStatsProps> = ({
+  days,
+  hours,
+  tourists,
+  trainings,
+}) => {
   return (
-    <div className="flex justify-center gap-x-24">
+    <div className="flex flex-col justify-center gap-x-24 gap-y-8 lg:flex-row">
       <p className="text-center text-5xl font-bold leading-loose">
         {tourists}
         <div className="description text-stone-600">tourists</div>
