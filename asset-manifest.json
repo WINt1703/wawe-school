@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/wawe-school/static/css/main.4ebb1f2c.css",
+    "main.js": "/wawe-school/static/js/main.8324ebb2.js",
+    "static/js/117.a5898339.chunk.js": "/wawe-school/static/js/117.a5898339.chunk.js",
+    "static/media/surfing_peak.svg": "/wawe-school/static/media/surfing_peak.5f5a3825193379a658291d2f30f3a5c1.svg",
+    "static/media/surfing-wawe.png": "/wawe-school/static/media/surfing-wawe.b90d7ccdf88850346683.png",
+    "static/media/sun_see.svg": "/wawe-school/static/media/sun_see.543ef40259fb6740e403183e3f75f1a2.svg",
+    "static/media/surfing.svg": "/wawe-school/static/media/surfing.807af15a1754b752921b2ff881e25d8f.svg",
+    "static/media/airplane.svg": "/wawe-school/static/media/airplane.d4262afa0971300cf386b9d09cdf31ea.svg",
+    "static/media/middle_wawe.svg": "/wawe-school/static/media/middle_wawe.cf12fa2ba6ec74522111269d363ad295.svg",
+    "static/media/short_wawe.svg": "/wawe-school/static/media/short_wawe.bcfbde2a23fe6b96b7c3377c552b5a03.svg",
+    "static/media/long_wawe.svg": "/wawe-school/static/media/long_wawe.39eb0296ba69326065507af68342a1e8.svg",
+    "index.html": "/wawe-school/index.html",
+    "static/media/logo.svg": "/wawe-school/static/media/logo.044c3d4d0bc7f599cdbd31b0e63e72ef.svg",
+    "main.4ebb1f2c.css.map": "/wawe-school/static/css/main.4ebb1f2c.css.map",
+    "main.8324ebb2.js.map": "/wawe-school/static/js/main.8324ebb2.js.map",
+    "117.a5898339.chunk.js.map": "/wawe-school/static/js/117.a5898339.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ebb1f2c.css",
+    "static/js/main.8324ebb2.js"
+  ]
+}
