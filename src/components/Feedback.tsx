@@ -2,14 +2,12 @@ import { FC, useState } from "react"
 import { useForm } from "react-hook-form"
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 import { Link } from "react-router-dom"
-import { baseUrl } from "../utils/hooks/fetcher"
 import Button from "./Button"
 import Input from "./Input"
 const phoneNumberRegex =
   /^(?:(?:\+|00)\d{1,3}\s?)?[\s().-]?(\d{1,4})[\s().-]?(\d{1,4})[\s().-]?(\d{1,9})$/
 
 const nameRegex = /^[A-Za-z]+([ -]?[A-Za-z]+)*$/
-
 interface FormInputs {
   name: string
   phone: string
@@ -28,15 +26,9 @@ const Feedback: FC = () => {
 
   const onSubmit = async (data: FormInputs): Promise<void> => {
     setSending(true)
-
-    try {
-      await fetch(baseUrl + "/feedback", {
-        method: "POST",
-        body: JSON.stringify(data),
-      })
-    } finally {
+    setTimeout(() => {
       setSending(false)
-    }
+    }, 3000)
   }
 
   return (
