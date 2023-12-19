@@ -16,17 +16,28 @@
       "check-file"
   ],
   "rules": {
-    "@typescript-eslint/strict-boolean-expressions": [
-        2,
-        {
-            "allowString" : false,
-            "allowNumber" : false
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          "prop": false,
+          "props": false,
+          "i": false,
+          "ref": false
         }
+      }
     ],
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/explicit-function-return-type": "error",
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
     "unicorn/filename-case": "off",
+    "unicorn/consistent-function-scoping": [
+      "error",
+      {
+        "checkArrowFunctions": false
+      }
+    ],
     "check-file/filename-naming-convention": [
         "error",
         {
@@ -34,7 +45,7 @@
           ".{js,ts}": "CAMEL_CASE"
         }
       ],
-      "check-file/folder-naming-convention": ["error", {"**/": "KEBAB_CASE"}],
+      "check-file/folder-naming-convention": ["error", {"src/components/*/": "PASCAL_CASE","src/*/": "KEBAB_CASE" }],
       "unicorn/prefer-query-selector": "off"
   },
   "ignorePatterns": ["src/**/*.test.ts", "src/frontend/generated/*"]

@@ -1,2 +1,4 @@
 src/reportWebVitals.ts
 src/index.tsx
+src/react-app-env.d.ts
+tailwind.config.js
