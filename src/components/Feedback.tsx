@@ -1,9 +1,10 @@
 import { FC, useState } from "react"
 import { useForm } from "react-hook-form"
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
+import { Link } from "react-router-dom"
 import { baseUrl } from "../utils/hooks/fetcher"
 import Button from "./Button"
 import Input from "./Input"
-
 const phoneNumberRegex =
   /^(?:(?:\+|00)\d{1,3}\s?)?[\s().-]?(\d{1,4})[\s().-]?(\d{1,4})[\s().-]?(\d{1,9})$/
 
@@ -113,7 +114,26 @@ const Feedback: FC = () => {
           35660
         </p>
       </div>
-      <div></div>
+      <div className="flex justify-center gap-5 uppercase">
+        <Link
+          className="hover:text-teal-400 active:text-teal-600"
+          to="https://www.instagram.com/"
+        >
+          <FaInstagram className="h-10 w-10" />
+        </Link>
+        <Link
+          className="hover:text-teal-400 active:text-teal-600"
+          to="https://www.facebook.com/"
+        >
+          <FaFacebook className="h-10 w-10" />
+        </Link>
+        <Link
+          className="hover:text-teal-400 active:text-teal-600"
+          to="https://www.youtube.com/"
+        >
+          <FaYoutube className="h-10 w-10" />
+        </Link>
+      </div>
     </div>
   )
 }
