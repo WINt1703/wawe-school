@@ -2,7 +2,7 @@ import { FC } from "react"
 
 const AboutSchool: FC = () => {
   return (
-    <div className="place-items-center md:grid">
+    <div className="place-items-center gap-y-20 md:grid">
       <div className="title">
         ABOUT THE SCHOOL, ABOUT SURFING, ABOUT THE CANARIES
       </div>

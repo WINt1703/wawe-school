@@ -21,7 +21,7 @@ const contactsId = "contacts"
 
 const App: FC = () => {
   return (
-    <>
+    <div className="h-full space-y-32">
       <Introduce
         aboutHref={`#${aboutId}`}
         servicesHref={`#${servicesId}`}
@@ -29,21 +29,33 @@ const App: FC = () => {
         teamHref={`#${teamId}`}
         contactsHref={`#${contactsId}`}
       />
-      <AboutSchool />
-      <AdvantagesSchool />
+      <section id={aboutId}>
+        <AboutSchool />
+      </section>
+      <section id={servicesId}>
+        <AdvantagesSchool />
+      </section>
       <ConquerPeak />
       <Quote />
-      <Video width={0} height={0} />
-      <ResortStats tourists={0} hours={0} trainings={0} days={0} />
+      <Video />
+      <ResortStats tourists={1000} hours={555} trainings={10_000} days={365} />
       <Blog />
-      <Team />
-      <Plans />
-      <div className="relative h-2/3 w-3/4 text-center overflow-hidden rounded-3xl">
-        <OutLocation />
+      <section id={teamId}>
+        <Team />
+      </section>
+      <section id={priceId} className="bg-gray-100 py-10">
+        <Plans />
+      </section>
+      <div className="flex h-full max-h-96 justify-center">
+        <div className="flex h-full w-3/4 justify-center overflow-hidden rounded-3xl">
+          <OutLocation />
+        </div>
       </div>
-      <Feedback />
+      <section id={contactsId}>
+        <Feedback />
+      </section>
       <Footer />
-    </>
+    </div>
   )
 }
 

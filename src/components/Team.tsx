@@ -6,7 +6,7 @@ const Team: FC = () => {
   const { team } = useTeam()
   return (
     team && (
-      <div className="space-y-12">
+      <div className="space-y-14">
         <p className="title">Out team</p>
         <div className="flex flex-col items-center justify-center gap-x-24 gap-y-8 lg:flex-row">
           {team.map((t) => (
