@@ -19,11 +19,7 @@ const Introduce: FC<IntroduceProps> = ({
   teamHref,
 }) => {
   const { hash } = useLocation()
-  const className = (href: string): string => {
-    const hrefClassName = "decoration-teal-400 underline-offset-8 underline"
 
-    return `${hash === href ? hrefClassName : ""} hidden md:block`
-  }
   return (
     <div
       style={{
@@ -34,19 +30,34 @@ const Introduce: FC<IntroduceProps> = ({
       <div className="absolute flex h-full w-full flex-col">
         <div className="flex h-48 justify-center gap-x-14  bg-gradient-to-b from-[#01353E] pt-5 text-white">
           <img src={Logo} className="h-10 w-10" alt="logo" />
-          <a href={aboutHref} className={className(aboutHref)}>
+          <a
+            href={aboutHref}
+            className="decoration-teal-400 underline-offset-8 hover:underline"
+          >
             About us
           </a>
-          <a href={servicesHref} className={className(servicesHref)}>
+          <a
+            href={servicesHref}
+            className="decoration-teal-400 underline-offset-8 hover:underline"
+          >
             Services
           </a>
-          <a href={priceHref} className={className(priceHref)}>
+          <a
+            href={priceHref}
+            className="decoration-teal-400 underline-offset-8 hover:underline"
+          >
             Price
           </a>
-          <a href={teamHref} className={className(teamHref)}>
+          <a
+            href={teamHref}
+            className="decoration-teal-400 underline-offset-8 hover:underline"
+          >
             Team
           </a>
-          <a href={contactsHref} className={className(contactsHref)}>
+          <a
+            href={contactsHref}
+            className="decoration-teal-400 underline-offset-8 hover:underline"
+          >
             Contacts
           </a>
         </div>
