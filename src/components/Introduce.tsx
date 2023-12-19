@@ -1,5 +1,4 @@
 import { FC } from "react"
-import { useLocation } from "react-router-dom"
 import Logo from "../assets/logo.svg"
 import Surfing from "../assets/surfing-wawe.png"
 
@@ -18,8 +17,8 @@ const Introduce: FC<IntroduceProps> = ({
   servicesHref,
   teamHref,
 }) => {
-  const { hash } = useLocation()
-
+  const linkClassName =
+    "decoration-teal-400 underline-offset-8 hover:underline hidden md:block"
   return (
     <div
       style={{
@@ -30,34 +29,19 @@ const Introduce: FC<IntroduceProps> = ({
       <div className="absolute flex h-full w-full flex-col">
         <div className="flex h-48 justify-center gap-x-14  bg-gradient-to-b from-[#01353E] pt-5 text-white">
           <img src={Logo} className="h-10 w-10" alt="logo" />
-          <a
-            href={aboutHref}
-            className="decoration-teal-400 underline-offset-8 hover:underline"
-          >
+          <a href={aboutHref} className={linkClassName}>
             About us
           </a>
-          <a
-            href={servicesHref}
-            className="decoration-teal-400 underline-offset-8 hover:underline"
-          >
+          <a href={servicesHref} className={linkClassName}>
             Services
           </a>
-          <a
-            href={priceHref}
-            className="decoration-teal-400 underline-offset-8 hover:underline"
-          >
+          <a href={priceHref} className={linkClassName}>
             Price
           </a>
-          <a
-            href={teamHref}
-            className="decoration-teal-400 underline-offset-8 hover:underline"
-          >
+          <a href={teamHref} className={linkClassName}>
             Team
           </a>
-          <a
-            href={contactsHref}
-            className="decoration-teal-400 underline-offset-8 hover:underline"
-          >
+          <a href={contactsHref} className={linkClassName}>
             Contacts
           </a>
         </div>
