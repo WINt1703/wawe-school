@@ -30,7 +30,7 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
               className="absolute h-full w-full object-cover brightness-50"
               src={s.photo}
             />
-            <p className="absolute left-2/4 top-2/4 max-w-md text-3xl text-white">
+            <p className="absolute inset-x-[10%] top-1/3 max-w-md text-3xl text-white md:top-2/4 lg:left-2/4 lg:right-0">
               {s.theme}
               <div className="description text-white">{s.description}</div>
             </p>
