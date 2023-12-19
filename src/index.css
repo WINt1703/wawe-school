@@ -15,7 +15,7 @@
     position: relative;
     color: #01353E;
     font-family: Raleway;
-    font-size: 45px;
+    font-size: 25px;
     font-weight: 800;
     letter-spacing: 0.6px;
     text-align: center;
@@ -25,9 +25,19 @@
   .title::after {
     color: #00B2A0;
     font-family: Raleway;
-    font-size: 50px;
+    font-size: 30px;
     position: absolute;   
     content: "/";
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      font-size: 45px
+    }
+
+    .title::after {
+      font-size: 50px;
+    }
   }
   
   .description {
@@ -37,5 +47,6 @@
     font-weight: normal;
     line-height: 18px;
     letter-spacing: 0.6px;
+    word-break: break-all;
   }
 }
