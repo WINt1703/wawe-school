@@ -37,11 +37,11 @@ const Feedback: FC = () => {
       setSending(false)
     }
   }
-  console.log(errors)
+
   return (
     <div className="space-y-28">
       <p className="title">Feedback</p>
-      <div className="flex justify-center gap-x-7">
+      <div className="flex flex-col items-center justify-center gap-7 lg:flex-row">
         <form onSubmit={handleSubmit(onSubmit)} className="form-control">
           <Input
             className="h-9 w-96 "
@@ -87,11 +87,11 @@ const Feedback: FC = () => {
               },
             })}
           />
-          <Button loading={sending} className="mt-auto" type="submit">
+          <Button loading={sending} className="m-auto lg:mt-auto" type="submit">
             Send
           </Button>
         </form>
-        <p className="w-full max-w-[600px] bg-gray-100 p-12">
+        <p className="w-full max-w-[600px] bg-gray-100 p-12 text-center lg:text-start">
           Have a question?
           <br />
           You can contact us:
