@@ -10,7 +10,7 @@ const Button: FC<ButtonProp> = ({ loading, children, className, ...props }) => {
       {...props}
       className={`${
         className ?? ""
-      } btn w-56 rounded-none border border-neutral-300 py-2 font-normal`}
+      } btn w-56 rounded-none border border-neutral-300 bg-white py-2 font-normal`}
     >
       {loading && (
         <span
