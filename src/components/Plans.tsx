@@ -9,7 +9,7 @@ const Plans: FC = () => {
     plans && (
       <div className="space-y-6 bg-gray-100 py-10">
         <div className="title">Plans</div>
-        <div className="flex justify-center space-x-10">
+        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row">
           {plans?.map((p) => (
             <PlanItem
               key={p.id}
