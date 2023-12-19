@@ -5,6 +5,7 @@ import Blog from "./components/Blog"
 import ConquerPeak from "./components/ConquerPeak"
 import Feedback from "./components/Feedback"
 import Footer from "./components/Footer"
+import Gallery from "./components/Gallery"
 import Introduce from "./components/Introduce"
 import OutLocation from "./components/OutLocation"
 import Plans from "./components/Plans"
@@ -35,6 +36,7 @@ const App: FC = () => {
       <section id={servicesId}>
         <AdvantagesSchool />
       </section>
+      <Gallery />
       <ConquerPeak />
       <div className="bg-gray-100 py-10">
         <Quote />
