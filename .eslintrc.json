@@ -22,7 +22,8 @@
         "replacements": {
           "prop": false,
           "props": false,
-          "i": false
+          "i": false,
+          "ref": false
         }
       }
     ],
