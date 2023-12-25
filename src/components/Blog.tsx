@@ -8,7 +8,7 @@ const Blog: FC = () => {
   return (
     <>
       <div className="title">Blog</div>
-      <div className="h-4/5">
+      <div className="h-full">
         <Carousel slides={slides} itemTag="blog_item" />
       </div>
     </>
