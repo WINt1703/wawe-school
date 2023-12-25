@@ -18,7 +18,7 @@ const Feedback: FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormInputs>({
     mode: "onChange",
   })
@@ -90,6 +90,7 @@ const Feedback: FC = () => {
             loading={sending}
             className="mx-auto mt-5 lg:mx-0"
             type="submit"
+            disabled={!isValid}
           >
             Send
           </Button>
