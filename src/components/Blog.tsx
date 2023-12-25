@@ -4,15 +4,14 @@ import Carousel from "./Carousel"
 
 const Blog: FC = () => {
   const { slides } = useBlog()
+  if (!slides) return <></>
   return (
-    slides && (
-      <>
-        <div className="title">Blog</div>
-        <div className="h-4/5">
-          <Carousel slides={slides} itemTag="blog_item" />
-        </div>
-      </>
-    )
+    <>
+      <div className="title">Blog</div>
+      <div className="h-4/5">
+        <Carousel slides={slides} itemTag="blog_item" />
+      </div>
+    </>
   )
 }
 

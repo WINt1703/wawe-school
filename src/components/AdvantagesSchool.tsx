@@ -55,7 +55,7 @@ const AdvantagesSchool: FC = () => {
               </p>
             </div>
           </div>
-          <div className="flex gap-y-5 items-center flex-col md:flex-row justify-between">
+          <div className="flex flex-col items-center justify-between gap-y-5 md:flex-row">
             <div className="space-y-2">
               <div>
                 <img
