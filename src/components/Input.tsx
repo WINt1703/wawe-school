@@ -32,9 +32,7 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProp>(
           />
         )}
         {error && (
-          <span className="label text-[5px] text-red-500">
-            {error?.message}
-          </span>
+          <span className="label text-sm text-red-500">{error?.message}</span>
         )}
       </>
     )
