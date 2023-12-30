@@ -22,6 +22,7 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
         {slides.map((s) => (
           <div
             id={itemTag + s.id}
+            data-testid={itemTag + s.id}
             key={s.id}
             className="carousel-item relative h-full w-full"
           >
@@ -42,6 +43,7 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
           // eslint-disable-next-line jsx-a11y/anchor-has-content
           <a
             key={s.id}
+            data-testid={`#${itemTag}${s.id}`}
             href={`#${itemTag}${s.id}`}
             className={`inline-block h-2.5 w-2.5 rounded-full ${
               selectedSlide === itemTag + s.id ? "bg-teal-400" : "bg-white"

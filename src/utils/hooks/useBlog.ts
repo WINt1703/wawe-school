@@ -8,7 +8,9 @@ export interface Slide {
   description: string
 }
 
-type ReturnBlogType = Omit<SWRResponse, "data"> & { slides?: Array<Slide> }
+export type ReturnBlogType = Omit<SWRResponse, "data"> & {
+  slides?: Array<Slide>
+}
 
 function useBlog(): ReturnBlogType {
   const { data, error, isLoading, isValidating, mutate } = useSWR<Array<Slide>>(
