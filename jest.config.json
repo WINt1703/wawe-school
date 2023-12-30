@@ -1,0 +1,4 @@
+{
+  "present": "ts-jest",
+  "testEnvironment": "jsdom"
+}
