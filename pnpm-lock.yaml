@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^13.0.0
     version: 13.0.0(react-dom@18.2.0)(react@18.2.0)
   '@testing-library/user-event':
-    specifier: ^13.2.1
-    version: 13.2.1(@testing-library/dom@9.3.3)
+    specifier: ^14.5.2
+    version: 14.5.2(@testing-library/dom@9.3.3)
   '@trivago/prettier-plugin-sort-imports':
     specifier: ^4.3.0
     version: 4.3.0(prettier@3.1.0)
@@ -2780,13 +2780,12 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@testing-library/user-event@13.2.1(@testing-library/dom@9.3.3):
-    resolution: {integrity: sha512-cczlgVl+krjOb3j1625usarNEibI0IFRJrSWX9UsJ1HKYFgCQv9Nb7QAipUDXl3Xdz8NDTsiS78eAkPSxlzTlw==}
-    engines: {node: '>=10', npm: '>=6'}
+  /@testing-library/user-event@14.5.2(@testing-library/dom@9.3.3):
+    resolution: {integrity: sha512-YAh82Wh4TIrxYLmfGcixwD18oIjyC1pFQC2Y01F2lzV2HTMiYrI0nze0FD0ocB//CKS/7jIUgae+adPqxK5yCQ==}
+    engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
     dependencies:
-      '@babel/runtime': 7.23.6
       '@testing-library/dom': 9.3.3
     dev: true
 
