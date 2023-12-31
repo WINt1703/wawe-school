@@ -44,10 +44,7 @@ const Feedback: FC = () => {
             placeholder="Name"
             error={errors.name}
             {...register("name", {
-              required: {
-                value: true,
-                message: "Name is required. Please enter your name.",
-              },
+              required: "Name is required. Please enter your name.",
               pattern: {
                 value: nameRegex,
                 message:
@@ -68,10 +65,7 @@ const Feedback: FC = () => {
                 value: phoneNumberRegex,
                 message: "Please use the format XXX-XXX-XXXX.",
               },
-              required: {
-                value: true,
-                message: "Phone is required. Please enter your phone.",
-              },
+              required: "Phone is required. Please enter your phone.",
             })}
           />
           <Input
@@ -80,10 +74,7 @@ const Feedback: FC = () => {
             placeholder="Leave a message and we will contact you shortly"
             error={errors.feedback}
             {...register("feedback", {
-              required: {
-                value: true,
-                message: "Feedback is required. Please write your feedback.",
-              },
+              required: "Feedback is required. Please write your feedback.",
             })}
           />
           <Button
