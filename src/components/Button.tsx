@@ -14,6 +14,7 @@ const Button: FC<ButtonProp> = ({ loading, children, className, ...props }) => {
     >
       {loading && (
         <span
+          data-testid="spinner"
           className={`loading loading-spinner loading-sm -ml-7 align-middle text-teal-400`}
         />
       )}
