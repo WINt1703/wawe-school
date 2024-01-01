@@ -33,7 +33,9 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
             />
             <p className="absolute inset-x-[10%] top-1/3 max-w-md text-3xl text-white md:top-2/4 lg:left-2/4 lg:right-0">
               {s.theme}
-              <div className="description text-white">{s.description}</div>
+              <span className="description block text-white">
+                {s.description}
+              </span>
             </p>
           </div>
         ))}
