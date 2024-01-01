@@ -78,7 +78,7 @@ describe("Feedback component", () => {
     expect(requiredFeedback).toBeInTheDocument()
   })
 
-  test("should submit button be disable", () => {
+  test("should be submit button disabled", () => {
     render(<Feedback />, {
       wrapper,
     })
