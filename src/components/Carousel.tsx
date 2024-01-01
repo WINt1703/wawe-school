@@ -22,17 +22,18 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
         {slides.map((s) => (
           <div
             id={itemTag + s.id}
+            data-testid={itemTag + s.id}
             key={s.id}
-            className="carousel-item relative h-full w-full"
+            className="carousel-item grid h-full w-full items-center bg-cover lg:grid-cols-2"
+            style={{
+              background: `linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(${s.photo})`,
+            }}
           >
-            <img
-              alt={s.theme}
-              className="absolute h-full w-full object-cover brightness-50"
-              src={s.photo}
-            />
-            <p className="absolute inset-x-[10%] top-1/3 max-w-md text-3xl text-white md:top-2/4 lg:left-2/4 lg:right-0">
+            <p className="col-start-2 max-w-md text-3xl text-white md:top-2/4 lg:left-2/4 lg:right-0">
               {s.theme}
-              <div className="description text-white">{s.description}</div>
+              <span className="description block break-keep text-white">
+                {s.description}
+              </span>
             </p>
           </div>
         ))}
@@ -42,6 +43,7 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
           // eslint-disable-next-line jsx-a11y/anchor-has-content
           <a
             key={s.id}
+            data-testid={`#${itemTag}${s.id}`}
             href={`#${itemTag}${s.id}`}
             className={`inline-block h-2.5 w-2.5 rounded-full ${
               selectedSlide === itemTag + s.id ? "bg-teal-400" : "bg-white"

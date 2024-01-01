@@ -33,9 +33,10 @@ const Gallery: FC = () => {
           </div>
         ))}
       </div>
-      <div className="grid max-w-6xl grid-cols-4 gap-10">
+      <div className="max-w-6xl grid-cols-4 gap-10 space-y-5 md:grid md:space-y-0">
         {photos.map((p, i) => (
           <img
+            key={i}
             src={p}
             alt=""
             className={`h-52 w-full object-cover ${
