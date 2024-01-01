@@ -24,14 +24,12 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
             id={itemTag + s.id}
             data-testid={itemTag + s.id}
             key={s.id}
-            className="carousel-item relative h-full w-full"
+            className="carousel-item grid h-full w-full items-center bg-cover lg:grid-cols-2"
+            style={{
+              background: `linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(${s.photo})`,
+            }}
           >
-            <img
-              alt={s.theme}
-              className="absolute h-full w-full object-cover brightness-50"
-              src={s.photo}
-            />
-            <p className="absolute inset-x-[10%] top-1/3 max-w-md text-3xl text-white md:top-2/4 lg:left-2/4 lg:right-0">
+            <p className="col-start-2 max-w-md text-3xl text-white md:top-2/4 lg:left-2/4 lg:right-0">
               {s.theme}
               <span className="description block text-white">
                 {s.description}
