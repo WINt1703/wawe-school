@@ -45,9 +45,9 @@ const Introduce: FC<IntroduceProps> = ({
         </a>
       </div>
       <p className="mb-20 grid grow place-content-center text-center text-xs leading-tight lg:text-base">
-        <div className="font-raleway text-4xl font-700 uppercase text-[#0D302C] sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
+        <span className="block font-raleway text-4xl font-700 uppercase text-[#0D302C] sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
           wawe
-        </div>
+        </span>
         Surf school in the Canary Islands
       </p>
     </div>

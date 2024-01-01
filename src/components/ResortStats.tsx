@@ -16,19 +16,21 @@ const ResortStats: FC<ResortStatsProps> = ({
     <div className="flex flex-col justify-center gap-x-24 gap-y-8 lg:flex-row">
       <p className="text-center text-5xl font-bold leading-loose">
         {tourists}
-        <div className="description text-stone-600">tourists</div>
+        <span className="description block text-stone-600">tourists</span>
       </p>
       <p className="text-center text-5xl font-bold leading-loose">
         {hours}
-        <div className="description text-stone-600">hours of riding</div>
+        <span className="description block text-stone-600">
+          hours of riding
+        </span>
       </p>
       <p className="text-center text-5xl font-bold leading-loose">
         {trainings}
-        <div className="description text-stone-600">prof. trainers</div>
+        <span className="description block text-stone-600">prof. trainers</span>
       </p>
       <p className="text-center text-5xl font-bold leading-loose">
         {days}
-        <div className="description text-stone-600">days of year</div>
+        <span className="description block text-stone-600">days of year</span>
       </p>
     </div>
   )
