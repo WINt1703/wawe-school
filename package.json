@@ -17,8 +17,7 @@
     "swr": "^2.2.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build && gh-pages -d build -m \"Deploy React app to GitHub Pages\"",
     "react_mock": "json-server --watch db.json --port 3001 & react-scripts start",
     "start_mock": "json-server --watch db.json --port 3001",
     "start": "react-scripts start",
