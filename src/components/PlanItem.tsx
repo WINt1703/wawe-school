@@ -8,7 +8,7 @@ type PlanItemProp = {
 
 const PlanItem: FC<PlanItemProp> = ({ benefits, name, price }) => {
 	return (
-		<div className="inline-flex w-[360px] flex-col space-y-7 bg-white p-10">
+		<div className="inline-flex h-[590px] w-[360px] flex-col space-y-7 bg-white p-10">
 			<p className="text-center text-xl">{name}</p>
 			<div className="description grow space-y-6">
 				{benefits.map((b, i) => (
