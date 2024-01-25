@@ -1,52 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;700&display=swap");
 
 @layer base {
-  html, body, #root {
-    height: 100%;
-    width: 100%;
-  }
+	html,
+	body,
+	#root {
+		height: 100%;
+		width: 100%;
+	}
 }
 
 @layer components {
-  .title {
-    position: relative;
-    color: #01353E;
-    font-family: Raleway;
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 0.6px;
-    text-align: center;
-    text-transform: uppercase;
-  }
+	.title {
+		position: relative;
+		color: #01353e;
+		font-family: Raleway;
+		font-size: 25px;
+		font-weight: 800;
+		letter-spacing: 0.6px;
+		text-align: center;
+		text-transform: uppercase;
+	}
 
-  .title::after {
-    color: #00B2A0;
-    font-family: Raleway;
-    font-size: 30px;
-    position: absolute;   
-    content: "/";
-  }
+	.title::after {
+		color: #00b2a0;
+		font-family: Raleway;
+		font-size: 30px;
+		position: absolute;
+		content: "/";
+	}
 
-  @media (min-width: 768px) {
-    .title {
-      font-size: 45px
-    }
+	@media (min-width: 768px) {
+		.title {
+			font-size: 45px;
+		}
 
-    .title::after {
-      font-size: 50px;
-    }
-  }
-  
-  .description {
-    color: #242121;
-    font-family: Roboto Condensed;
-    font-size: 15px;
-    font-weight: normal;
-    line-height: 18px;
-    letter-spacing: 0.6px;
-    word-break: break-all;
-  }
+		.title::after {
+			font-size: 50px;
+		}
+	}
+
+	.description {
+		color: #242121;
+		font-family: Roboto Condensed;
+		font-size: 15px;
+		font-weight: normal;
+		line-height: 18px;
+		letter-spacing: 0.6px;
+		word-break: break-all;
+	}
 }

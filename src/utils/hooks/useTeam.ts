@@ -1,29 +1,29 @@
-import useSWR, { SWRResponse } from "swr"
 import fetcher from "./fetcher"
+import useSWR, { SWRResponse } from "swr"
 
 export interface Teammate {
-  id: number
-  name: string
-  jobPosition: string
-  photo: string
+	id: number
+	name: string
+	jobPosition: string
+	photo: string
 }
 
 type ReturnTeamType = Omit<SWRResponse, "data"> & {
-  team?: Array<Teammate>
+	team?: Array<Teammate>
 }
 
 function useTeam(): ReturnTeamType {
-  const { data, error, isLoading, isValidating, mutate } = useSWR<
-    Array<Teammate>
-  >("team", fetcher)
+	const { data, error, isLoading, isValidating, mutate } = useSWR<
+		Array<Teammate>
+	>("team", fetcher)
 
-  return {
-    error: error,
-    team: data,
-    isLoading: isLoading,
-    isValidating: isValidating,
-    mutate: mutate,
-  }
+	return {
+		error: error,
+		team: data,
+		isLoading: isLoading,
+		isValidating: isValidating,
+		mutate: mutate
+	}
 }
 
 export default useTeam
