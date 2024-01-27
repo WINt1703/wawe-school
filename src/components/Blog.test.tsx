@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react"
-import { FC, PropsWithChildren } from "react"
-import { MemoryRouter } from "react-router-dom"
 import * as useBlog from "../utils/hooks/useBlog"
 import { ReturnBlogType } from "../utils/hooks/useBlog"
 import Blog from "./Blog"
+import { render, screen } from "@testing-library/react"
+import { FC, PropsWithChildren } from "react"
+import { MemoryRouter } from "react-router-dom"
 
 const hookResult: ReturnBlogType = {
 	loading: false,
@@ -12,14 +12,14 @@ const hookResult: ReturnBlogType = {
 			id: 1,
 			description: "Slide 1",
 			photo:
-				"https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fvercel%2Fswr%2Fdiscussions%2F2077&psig=AOvVaw0XFK0A4iODyTwUGaVI21d5&ust=1703990477728000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDBy66RtoMDFQAAAAAdAAAAABAD",
+				"https://sxqlzlelwdslochdutgr.supabase.co/storage/v1/object/public/blog/slide-1.jpg?t=2024-01-27T01%3A03%3A56.790Z",
 			theme: "Test slide 1"
 		},
 		{
 			id: 2,
 			description: "Slide 2",
 			photo:
-				"https://www.google.com/url?sa=i&url=https%3A%2F%2Ffrontend-digest.com%2Fmocking-rest-apis-with-msw-af2353012daa&psig=AOvVaw0XFK0A4iODyTwUGaVI21d5&ust=1703990477728000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDBy66RtoMDFQAAAAAdAAAAABAI",
+				"https://sxqlzlelwdslochdutgr.supabase.co/storage/v1/object/public/`blog/slide-2.jpg?t=2024-01-27T01%3A04%3A11.394Z",
 			theme: "Test slide 2"
 		}
 	]
@@ -43,7 +43,7 @@ describe("Blog component", () => {
 	test("should render Blog without slides", async () => {
 		jest
 			.spyOn(useBlog, "default")
-			.mockReturnValueOnce({ ...hookResult, slides: [] })
+			.mockReturnValueOnce({ ...hookResult, slides: undefined })
 		render(<Blog />, { wrapper })
 
 		const carouselItems = screen.queryAllByTestId(/^blog_item\d/)
