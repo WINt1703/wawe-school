@@ -3,46 +3,47 @@ import Button from "./Button"
 import { FC, useEffect, useState } from "react"
 
 const Gallery: FC = () => {
-	const { gallery } = useGallery()
-	const [category, setCategory] = useState<string | undefined>()
-	const photos = gallery?.categories.find((c) => c.name === category)?.photos
-	const categoryHandler = (name: string): void => setCategory(name)
+	const { categories, loading } = useGallery()
+	const [categoryId, setCategoryId] = useState<number | undefined>()
 
 	useEffect(() => {
-		if (gallery) {
-			setCategory(gallery.currentCategory)
-		}
-	}, [gallery])
+		if (categories) setCategoryId(categories[0].id)
+	}, [setCategoryId, categories])
 
-	if (!gallery || !photos) return <></>
+	if (loading) return <div className="text-center">Loading...</div>
+	else if (!categories) return <div className="text-center">Empty gallery</div>
 
 	return (
-		<div className="mx-auto grid place-content-center space-y-8">
+		<div className="grid place-content-center space-y-8">
 			<div className="title">Gallery</div>
 			<div className="flex gap-x-5">
-				{gallery.categories.map((c, i) => (
+				{categories.map((c, i) => (
 					<div
 						key={i}
 						className={`uppercase hover:cursor-pointer ${
-							category === c.name ? "text-teal-400" : ""
+							categoryId === c.id ? "text-teal-400" : ""
 						}`}
 						// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-						onClick={() => categoryHandler(c.name)}>
+						onClick={() => setCategoryId(c.id)}>
 						{c.name}
 					</div>
 				))}
 			</div>
 			<div className="max-w-6xl grid-cols-4 gap-10 space-y-5 md:grid md:space-y-0">
-				{photos.map((p, i) => (
-					<img
-						key={i}
-						src={p}
-						alt=""
-						className={`h-52 w-full object-cover ${
-							(i + 1) % 6 === 1 || !((i + 1) % 6) ? "col-span-2" : "col-span-1"
-						}`}
-					/>
-				))}
+				{categories
+					.find((c) => c.id === categoryId)
+					?.photos.map((p, i) => (
+						<img
+							key={i}
+							src={p}
+							alt=""
+							className={`h-52 w-full object-cover ${
+								(i + 1) % 6 === 1 || !((i + 1) % 6)
+									? "col-span-2"
+									: "col-span-1"
+							}`}
+						/>
+					))}
 			</div>
 			<Button type="button" className="mx-auto">
 				Show more

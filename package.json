@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@supabase/supabase-js": "^2.39.3",
 		"cra-template-wint": "1.2.35",
 		"daisyui": "^4.4.20",
 		"leaflet": "^1.9.4",
@@ -13,10 +14,10 @@
 		"react-icons": "^4.12.0",
 		"react-leaflet": "^4.2.1",
 		"react-router-dom": "^6.21.0",
-		"react-scripts": "5.0.1",
-		"swr": "^2.2.4"
+		"react-scripts": "5.0.1"
 	},
 	"scripts": {
+		"supabase_generate": "pnpm dlx supabase gen types typescript --project-id \"sxqlzlelwdslochdutgr\" --schema public > ./src/utils/types/supabase.ts",
 		"deploy": "npm run build && gh-pages -d build -m \"Deploy React app to GitHub Pages\"",
 		"react_mock": "json-server --watch db.json --port 3001 & react-scripts start",
 		"start_mock": "json-server --watch db.json --port 3001",
@@ -67,6 +68,7 @@
 		"json-server": "^0.17.4",
 		"prettier": "3.1.0",
 		"prettier-plugin-tailwindcss": "^0.5.11",
+		"supabase": ">=1.8.1",
 		"tailwindcss": "^3.3.5",
 		"ts-jest": "^29.1.1",
 		"typescript": "^5.2.2",

@@ -1,28 +1,40 @@
-import fetcher from "./fetcher"
-import useSWR, { SWRResponse } from "swr"
+import client from "../supabaseClient"
+import { Database } from "../types/supabase"
+import { PostgrestError } from "@supabase/supabase-js"
+import { useEffect, useState } from "react"
 
-export interface Teammate {
-	id: number
-	name: string
-	jobPosition: string
-	photo: string
-}
+export type Employee = Database["public"]["Tables"]["employee"]["Row"]
 
-type ReturnTeamType = Omit<SWRResponse, "data"> & {
-	team?: Array<Teammate>
+type ReturnTeamType = {
+	loading: boolean
+	error?: PostgrestError
+	employee?: Array<Employee>
 }
 
 function useTeam(): ReturnTeamType {
-	const { data, error, isLoading, isValidating, mutate } = useSWR<
-		Array<Teammate>
-	>("team", fetcher)
+	const [employee, setEmployee] = useState<Array<Employee> | undefined>()
+	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState<PostgrestError>()
+
+	const fetcher = async (): Promise<void> => {
+		setLoading(true)
+
+		const { data, error } = await client.from("employee").select()
+
+		if (error) setError(error)
+
+		setEmployee(data ?? undefined)
+		setLoading(false)
+	}
+
+	useEffect(() => {
+		fetcher()
+	}, [])
 
 	return {
-		error: error,
-		team: data,
-		isLoading: isLoading,
-		isValidating: isValidating,
-		mutate: mutate
+		employee,
+		loading,
+		error
 	}
 }
 

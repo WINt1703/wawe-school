@@ -1,29 +1,42 @@
-import fetcher from "./fetcher"
-import useSWR, { SWRResponse } from "swr"
+import client from "../supabaseClient"
+import { Database } from "../types/supabase"
+import { PostgrestError } from "@supabase/supabase-js"
+import { useEffect, useState } from "react"
 
-export interface Slide {
-	id: number
-	photo: string
-	theme: string
-	description: string
-}
+export type Slide = Database["public"]["Tables"]["blog"]["Row"]
 
-export type ReturnBlogType = Omit<SWRResponse, "data"> & {
+export type ReturnBlogType = {
 	slides?: Array<Slide>
+	loading: boolean
+	error?: PostgrestError
 }
 
 function useBlog(): ReturnBlogType {
-	const { data, error, isLoading, isValidating, mutate } = useSWR<Array<Slide>>(
-		"blog_slides",
-		fetcher
-	)
+	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState<PostgrestError>()
+	const [slides, setSlides] = useState<Array<Slide> | undefined>()
+
+	const fetcher = async (): Promise<void> => {
+		setLoading(true)
+
+		const { data, error } = await client.from("blog").select()
+
+		if (error) {
+			setError(error)
+		}
+
+		setSlides(data ?? undefined)
+		setLoading(false)
+	}
+
+	useEffect(() => {
+		fetcher()
+	}, [])
 
 	return {
-		error: error,
-		slides: data,
-		isLoading: isLoading,
-		isValidating: isValidating,
-		mutate: mutate
+		error,
+		slides,
+		loading
 	}
 }
 

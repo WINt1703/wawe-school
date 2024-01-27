@@ -1,27 +1,40 @@
-import fetcher from "./fetcher"
-import useSWR, { SWRResponse } from "swr"
+import client from "../supabaseClient"
+import { Database } from "../types/supabase"
+import { PostgrestError } from "@supabase/supabase-js"
+import { useEffect, useState } from "react"
 
-export interface Plan {
-	id: number
-	name: string
-	price: number
-	benefits: string[]
+export type Plan = Database["public"]["Tables"]["plan"]["Row"]
+
+type ReturnPlansType = {
+	loading: boolean
+	error?: PostgrestError
+	plans?: Array<Plan>
 }
 
-type ReturnPlansType = Omit<SWRResponse, "data"> & { plans?: Array<Plan> }
-
 function usePlans(): ReturnPlansType {
-	const { data, error, isLoading, isValidating, mutate } = useSWR<Array<Plan>>(
-		"plans",
-		fetcher
-	)
+	const [plans, setPlans] = useState<Array<Plan> | undefined>()
+	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState<PostgrestError>()
+
+	const fetcher = async (): Promise<void> => {
+		setLoading(true)
+
+		const { data, error } = await client.from("plan").select()
+
+		if (error) setError(error)
+
+		setPlans(data ?? undefined)
+		setLoading(false)
+	}
+
+	useEffect(() => {
+		fetcher()
+	}, [])
 
 	return {
-		error: error,
-		plans: data,
-		isLoading: isLoading,
-		isValidating: isValidating,
-		mutate: mutate
+		plans,
+		loading,
+		error
 	}
 }
 

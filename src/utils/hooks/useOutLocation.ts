@@ -1,32 +1,57 @@
-import fetcher from "./fetcher"
-import useSWR, { SWRResponse } from "swr"
+import client from "../supabaseClient"
+import ArrayElement from "../types/arrayElement"
+import { Database } from "../types/supabase"
+import { PostgrestError } from "@supabase/supabase-js"
+import { useEffect, useState } from "react"
 
-interface OurLocation {
-	zoomCenter: Location
-	ourLocation: Location
-	surfingHousePhoto: string
+type GetMapReturnType = ArrayElement<
+	Database["public"]["Functions"]["get_map"]["Returns"]
+>
+
+export type Map = Pick<GetMapReturnType, "id" | "photo"> & {
+	zoom: [number, number]
+	location: [number, number]
 }
 
-interface Location {
-	lat: number
-	lng: number
+type ReturnMapType = {
+	loading: boolean
+	error?: PostgrestError
+	map?: Map
 }
 
-type ReturnLocationType = Omit<SWRResponse, "data"> & { location?: OurLocation }
+function useOurLocation(): ReturnMapType {
+	const [map, setMap] = useState<Map | undefined>()
+	const [loading, setLoading] = useState(false)
+	const [error, setError] = useState<PostgrestError>()
 
-function useOutLocation(): ReturnLocationType {
-	const { data, error, isLoading, isValidating, mutate } = useSWR<OurLocation>(
-		"location",
-		fetcher
-	)
+	const fetcher = async (): Promise<void> => {
+		setLoading(true)
+
+		const { data, error } = await client.rpc("get_map").select()
+
+		if (error) setError(error)
+
+		setMap(
+			data && data[0].zoom && data[0].location
+				? {
+						...data[0],
+						zoom: data[0].zoom as [number, number],
+						location: data[0].location as [number, number]
+				  }
+				: undefined
+		)
+		setLoading(false)
+	}
+
+	useEffect(() => {
+		fetcher()
+	}, [])
 
 	return {
-		error: error,
-		location: data,
-		isLoading: isLoading,
-		isValidating: isValidating,
-		mutate: mutate
+		map,
+		loading,
+		error
 	}
 }
 
-export default useOutLocation
+export default useOurLocation

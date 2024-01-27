@@ -5,8 +5,6 @@ import { FC } from "react"
 const Plans: FC = () => {
 	const { plans } = usePlans()
 
-	if (!plans) return <></>
-
 	return (
 		<div className="space-y-6">
 			<div className="title">Plans</div>

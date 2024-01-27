@@ -1,14 +1,12 @@
-import * as useBlog from "../utils/hooks/useBlog"
-import { ReturnBlogType } from "../utils/hooks/useBlog"
-import Blog from "./Blog"
 import { render, screen } from "@testing-library/react"
 import { FC, PropsWithChildren } from "react"
 import { MemoryRouter } from "react-router-dom"
+import * as useBlog from "../utils/hooks/useBlog"
+import { ReturnBlogType } from "../utils/hooks/useBlog"
+import Blog from "./Blog"
 
 const hookResult: ReturnBlogType = {
-	error: false,
-	isLoading: false,
-	isValidating: true,
+	loading: false,
 	slides: [
 		{
 			id: 1,
@@ -24,8 +22,7 @@ const hookResult: ReturnBlogType = {
 				"https://www.google.com/url?sa=i&url=https%3A%2F%2Ffrontend-digest.com%2Fmocking-rest-apis-with-msw-af2353012daa&psig=AOvVaw0XFK0A4iODyTwUGaVI21d5&ust=1703990477728000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDBy66RtoMDFQAAAAAdAAAAABAI",
 			theme: "Test slide 2"
 		}
-	],
-	mutate: jest.fn()
+	]
 }
 
 const wrapper: FC<PropsWithChildren> = ({ children }) => (
@@ -46,7 +43,7 @@ describe("Blog component", () => {
 	test("should render Blog without slides", async () => {
 		jest
 			.spyOn(useBlog, "default")
-			.mockReturnValueOnce({ ...hookResult, slides: undefined })
+			.mockReturnValueOnce({ ...hookResult, slides: [] })
 		render(<Blog />, { wrapper })
 
 		const carouselItems = screen.queryAllByTestId(/^blog_item\d/)

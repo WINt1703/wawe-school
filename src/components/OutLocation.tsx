@@ -3,9 +3,9 @@ import { FC } from "react"
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 
 const OutLocation: FC = () => {
-	const { location } = useOutLocation()
+	const { map } = useOutLocation()
 
-	if (!location) return <></>
+	if (!map) return <></>
 
 	return (
 		<MapContainer
@@ -14,17 +14,17 @@ const OutLocation: FC = () => {
 			maxZoom={17}
 			doubleClickZoom
 			className="h-full w-full"
-			center={[location.zoomCenter.lat, location.zoomCenter.lng]}>
+			center={map.zoom}>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 				url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 			/>
 
-			<Marker position={[location.ourLocation.lat, location.ourLocation.lng]}>
+			<Marker position={map.location}>
 				<Popup>
 					<img
 						className="h-64 w-64 rounded-md object-cover"
-						src={location.surfingHousePhoto}
+						src={map?.photo}
 						alt="surfing center"
 					/>
 				</Popup>

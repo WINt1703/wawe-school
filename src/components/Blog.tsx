@@ -3,8 +3,10 @@ import Carousel from "./Carousel"
 import { FC } from "react"
 
 const Blog: FC = () => {
-	const { slides } = useBlog()
-	if (!slides) return <></>
+	const { slides, loading } = useBlog()
+
+	if (loading) return <div className="text-center">Loading...</div>
+
 	return (
 		<>
 			<div className="title">Blog</div>

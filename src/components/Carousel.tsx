@@ -3,7 +3,7 @@ import { FC, useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 
 type CarouselProps = {
-	slides: Array<Slide>
+	slides?: Array<Slide>
 	itemTag: string
 }
 
@@ -13,13 +13,13 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
 
 	useEffect(() => {
 		const href = hash.slice(1)
-		setSelectedSlide(href === "" ? itemTag + slides[0].id : href)
-	}, [hash])
+		if (slides) setSelectedSlide(href === "" ? itemTag + slides[0].id : href)
+	}, [hash, itemTag, slides])
 
 	return (
 		<div className="relative h-full">
 			<div className="carousel absolute inset-0">
-				{slides.map((s) => (
+				{slides?.map((s) => (
 					<div
 						id={itemTag + s.id}
 						data-testid={itemTag + s.id}
@@ -38,7 +38,7 @@ const Carousel: FC<CarouselProps> = ({ slides, itemTag }) => {
 				))}
 			</div>
 			<div className="absolute bottom-3 left-2/4 space-x-4">
-				{slides.map((s) => (
+				{slides?.map((s) => (
 					// eslint-disable-next-line jsx-a11y/anchor-has-content
 					<a
 						key={s.id}
