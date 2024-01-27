@@ -1,6 +1,6 @@
+import Button from "../components/Button"
+import Input from "../components/Input"
 import useFeedback from "../utils/hooks/useFeedback"
-import Button from "./Button"
-import Input from "./Input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { FC } from "react"
 import { useForm } from "react-hook-form"
@@ -22,7 +22,7 @@ const schema = z.object({
 	phone: z
 		.string()
 		.min(12, "Phone is required. Please enter your phone.")
-		.refine(isMobilePhone, "Please enter your phone (123456789000)")
+		.refine(isMobilePhone, "Please enter your phone. Example: 122333444455")
 })
 
 type ValidationSchema = z.infer<typeof schema>
@@ -39,7 +39,7 @@ const Feedback: FC = () => {
 	const { handler, loading } = useFeedback()
 
 	return (
-		<div className="space-y-28">
+		<section className="space-y-28">
 			<p className="title">Feedback</p>
 			<div className="flex flex-col items-center justify-center gap-7 lg:flex-row">
 				<form
@@ -107,7 +107,7 @@ const Feedback: FC = () => {
 					<FaYoutube className="h-10 w-10" />
 				</Link>
 			</div>
-		</div>
+		</section>
 	)
 }
 

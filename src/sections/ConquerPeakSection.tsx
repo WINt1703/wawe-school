@@ -1,9 +1,9 @@
 import Peak from "../assets/surfing_peak.svg"
 import { FC } from "react"
 
-const ConquerPeak: FC = () => {
+const ConquerPeakSection: FC = () => {
 	return (
-		<div className="grid lg:grid-cols-2">
+		<section className="grid lg:grid-cols-2">
 			<div className="m-auto inline-block max-w-[500px] space-y-20">
 				<p className="title">CONQUER THE PEAKS</p>
 				<p className="description">
@@ -33,8 +33,8 @@ const ConquerPeak: FC = () => {
 				src={Peak}
 				alt="surfing peak"
 			/>
-		</div>
+		</section>
 	)
 }
 
-export default ConquerPeak
+export default ConquerPeakSection

@@ -6,9 +6,9 @@ import SunSee from "../assets/sun_see.svg"
 import Surfing from "../assets/surfing.svg"
 import { FC } from "react"
 
-const AdvantagesSchool: FC = () => {
+const AdvantagesSchoolSection: FC = () => {
 	return (
-		<div className="grid place-content-center gap-y-20">
+		<section id="service" className="grid place-content-center gap-y-20">
 			<div className="title">AT SCHOOL YOU WILL GET</div>
 			<div className="flex justify-center">
 				<div className="inline-block space-y-20">
@@ -97,8 +97,8 @@ const AdvantagesSchool: FC = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	)
 }
 
-export default AdvantagesSchool
+export default AdvantagesSchoolSection

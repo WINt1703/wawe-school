@@ -1,12 +1,12 @@
+import PlanItem from "../components/PlanItem"
 import usePlans from "../utils/hooks/usePlans"
-import PlanItem from "./PlanItem"
 import { FC } from "react"
 
-const Plans: FC = () => {
+const PlansSection: FC = () => {
 	const { plans } = usePlans()
 
 	return (
-		<div className="space-y-6">
+		<section id="price" className="space-y-6 bg-gray-100 py-10">
 			<div className="title">Plans</div>
 			<div className="flex flex-col items-center justify-center gap-10 lg:flex-row">
 				{plans?.map((p) => (
@@ -18,8 +18,8 @@ const Plans: FC = () => {
 					/>
 				))}
 			</div>
-		</div>
+		</section>
 	)
 }
 
-export default Plans
+export default PlansSection

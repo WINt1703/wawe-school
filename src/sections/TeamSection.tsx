@@ -1,12 +1,12 @@
+import Member from "../components/Member"
 import useTeam from "../utils/hooks/useTeam"
-import Member from "./Member"
 import { FC } from "react"
 
-const Team: FC = () => {
+const TeamSection: FC = () => {
 	const { employee } = useTeam()
 
 	return (
-		<div className="space-y-14">
+		<section id="team" className="space-y-14">
 			<p className="title">Out team</p>
 			<div className="flex flex-col items-center justify-center gap-x-24 gap-y-8 lg:flex-row">
 				{employee?.map((emp) => (
@@ -18,8 +18,8 @@ const Team: FC = () => {
 					/>
 				))}
 			</div>
-		</div>
+		</section>
 	)
 }
 
-export default Team
+export default TeamSection

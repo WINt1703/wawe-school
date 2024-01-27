@@ -2,44 +2,30 @@ import Logo from "../assets/logo.svg"
 import Surfing from "../assets/surfing-wawe.png"
 import { FC } from "react"
 
-type IntroduceProps = {
-	aboutHref: string
-	servicesHref: string
-	priceHref: string
-	teamHref: string
-	contactsHref: string
-}
-
-const Introduce: FC<IntroduceProps> = ({
-	aboutHref,
-	contactsHref,
-	priceHref,
-	servicesHref,
-	teamHref
-}) => {
+const IntroduceSection: FC = () => {
 	const linkClassName =
 		"decoration-teal-400 underline-offset-8 hover:underline hidden md:block"
 	return (
-		<div
+		<section
 			className="flex h-full w-full flex-col"
 			style={{
 				backgroundImage: `url('${Surfing}')`
 			}}>
 			<div className="flex h-48 justify-center gap-x-14  bg-gradient-to-b from-[#01353E] pt-5 text-white">
 				<img src={Logo} className="h-10 w-10" alt="logo" />
-				<a href={aboutHref} className={linkClassName}>
+				<a href="#about" className={linkClassName}>
 					About us
 				</a>
-				<a href={servicesHref} className={linkClassName}>
+				<a href="#services" className={linkClassName}>
 					Services
 				</a>
-				<a href={priceHref} className={linkClassName}>
+				<a href="#price" className={linkClassName}>
 					Price
 				</a>
-				<a href={teamHref} className={linkClassName}>
+				<a href="#team" className={linkClassName}>
 					Team
 				</a>
-				<a href={contactsHref} className={linkClassName}>
+				<a href="#contacts" className={linkClassName}>
 					Contacts
 				</a>
 			</div>
@@ -49,8 +35,8 @@ const Introduce: FC<IntroduceProps> = ({
 				</span>
 				Surf school in the Canary Islands
 			</p>
-		</div>
+		</section>
 	)
 }
 
-export default Introduce
+export default IntroduceSection

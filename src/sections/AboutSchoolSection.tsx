@@ -1,8 +1,8 @@
 import { FC } from "react"
 
-const AboutSchool: FC = () => {
+const AboutSchoolSection: FC = () => {
 	return (
-		<div className="place-items-center gap-y-20 md:grid">
+		<section id="about" className="place-items-center gap-y-20 md:grid">
 			<div className="title">
 				ABOUT THE SCHOOL, ABOUT SURFING, ABOUT THE CANARIES
 			</div>
@@ -63,8 +63,8 @@ const AboutSchool: FC = () => {
 					but this level will also rise to a new level.{" "}
 				</p>
 			</div>
-		</div>
+		</section>
 	)
 }
 
-export default AboutSchool
+export default AboutSchoolSection

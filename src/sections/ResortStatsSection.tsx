@@ -1,39 +1,28 @@
 import { FC } from "react"
 
-type ResortStatsProps = {
-	tourists: number
-	hours: number
-	trainings: number
-	days: number
-}
-const ResortStats: FC<ResortStatsProps> = ({
-	days,
-	hours,
-	tourists,
-	trainings
-}) => {
+const ResortStatsSection: FC = () => {
 	return (
 		<div className="flex flex-col justify-center gap-x-24 gap-y-8 lg:flex-row">
 			<p className="text-center text-5xl font-bold leading-loose">
-				{tourists}
+				1000
 				<span className="description block text-stone-600">tourists</span>
 			</p>
 			<p className="text-center text-5xl font-bold leading-loose">
-				{hours}
+				300
 				<span className="description block text-stone-600">
 					hours of riding
 				</span>
 			</p>
 			<p className="text-center text-5xl font-bold leading-loose">
-				{trainings}
+				10 000
 				<span className="description block text-stone-600">prof. trainers</span>
 			</p>
 			<p className="text-center text-5xl font-bold leading-loose">
-				{days}
+				365
 				<span className="description block text-stone-600">days of year</span>
 			</p>
 		</div>
 	)
 }
 
-export default ResortStats
+export default ResortStatsSection

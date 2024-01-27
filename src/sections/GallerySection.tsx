@@ -1,12 +1,12 @@
+import Button from "../components/Button"
 import useGallery from "../utils/hooks/useGallery"
-import Button from "./Button"
 import { FC } from "react"
 
-const Gallery: FC = () => {
+const GallerySection: FC = () => {
 	const { categories, loading, more, setSelected, selected } = useGallery(9)
 
 	return (
-		<div className="grid place-content-center space-y-8">
+		<section className="grid place-content-center space-y-8">
 			<div className="title">Gallery</div>
 			<div className="flex gap-x-5">
 				{categories?.map((c) => (
@@ -40,8 +40,8 @@ const Gallery: FC = () => {
 				onClick={() => more(3)}>
 				{selected?.noMorePhoto ? "All loaded" : "Show more"}
 			</Button>
-		</div>
+		</section>
 	)
 }
 
-export default Gallery
+export default GallerySection
