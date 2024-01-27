@@ -5,7 +5,7 @@ import { useState } from "react"
 
 export type Slide = Database["public"]["Tables"]["blog"]["Row"]
 
-export type FormInputs = {
+type FormInputs = {
 	name: string
 	phone: string
 	feedback: string

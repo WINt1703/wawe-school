@@ -1,23 +1,40 @@
-import useFeedback, { FormInputs } from "../utils/hooks/useFeedback"
+import useFeedback from "../utils/hooks/useFeedback"
 import Button from "./Button"
 import Input from "./Input"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { FC } from "react"
 import { useForm } from "react-hook-form"
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { isAlpha, isMobilePhone } from "validator"
+import { z } from "zod"
 
-const phoneNumberRegex =
-	/^(?:(?:\+|00)\d{1,3}\s?)?[\s().-]?(\d{1,4})[\s().-]?(\d{1,4})[\s().-]?(\d{1,9})$/
+const schema = z.object({
+	feedback: z
+		.string()
+		.min(1, "Feedback is required. Please write your feedback.")
+		.max(400, "Max length for message is 400 symbols"),
+	name: z
+		.string()
+		.min(1, "Name is required. Please enter your name.")
+		.max(25, "Max length for name is 25 symbols")
+		.refine(isAlpha, "Name should consist of letters"),
+	phone: z
+		.string()
+		.min(12, "Phone is required. Please enter your phone.")
+		.refine(isMobilePhone, "Please enter your phone (123456789000)")
+})
 
-const nameRegex = /^[A-Za-z]+([ -]?[A-Za-z]+)*$/
+type ValidationSchema = z.infer<typeof schema>
 
 const Feedback: FC = () => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors, isValid }
-	} = useForm<FormInputs>({
-		mode: "onChange"
+	} = useForm<ValidationSchema>({
+		mode: "onChange",
+		resolver: zodResolver(schema)
 	})
 	const { handler, loading } = useFeedback()
 
@@ -32,39 +49,20 @@ const Feedback: FC = () => {
 						className="h-9 w-full"
 						placeholder="Name"
 						error={errors.name}
-						{...register("name", {
-							required: "Name is required. Please enter your name.",
-							pattern: {
-								value: nameRegex,
-								message:
-									"Name should consist of letters and may include dashes or spaces."
-							},
-							maxLength: {
-								value: 20,
-								message: "Max length for name is 20 symbols"
-							}
-						})}
+						{...register("name")}
 					/>
 					<Input
 						className="h-9 w-full"
 						placeholder="Phone"
 						error={errors.phone}
-						{...register("phone", {
-							pattern: {
-								value: phoneNumberRegex,
-								message: "Please use the format XXX-XXX-XXXX."
-							},
-							required: "Phone is required. Please enter your phone."
-						})}
+						{...register("phone")}
 					/>
 					<Input
 						textarea
 						className="h-32 w-full resize-none overflow-scroll align-top"
 						placeholder="Leave a message and we will contact you shortly"
 						error={errors.feedback}
-						{...register("feedback", {
-							required: "Feedback is required. Please write your feedback."
-						})}
+						{...register("feedback")}
 					/>
 					<Button
 						loading={loading}
@@ -74,7 +72,7 @@ const Feedback: FC = () => {
 						Send
 					</Button>
 				</form>
-				<p className="h-full w-full max-w-[600px] bg-gray-100 p-12 text-center lg:text-start">
+				<p className="w-full max-w-[600px] self-start justify-self-start bg-gray-100 p-12 text-center lg:text-start">
 					Have a question?
 					<br />
 					You can contact us:
