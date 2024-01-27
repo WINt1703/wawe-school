@@ -8,7 +8,7 @@ const BlogSection: FC = () => {
 	if (loading) return <div className="text-center">Loading...</div>
 
 	return (
-		<section>
+		<section className="h-full">
 			<div className="title">Blog</div>
 			<div className="h-full">
 				<Carousel slides={slides} itemTag="blog_item" />
