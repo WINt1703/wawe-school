@@ -1,5 +1,6 @@
 import { Slide } from "../utils/hooks/useBlog"
 import { FC, RefObject, createRef, useEffect, useRef, useState } from "react"
+import { useSwipeable } from "react-swipeable"
 
 type CarouselProps = {
 	slides?: Array<Slide>
@@ -11,6 +12,16 @@ const Carousel: FC<CarouselProps> = ({ slides }) => {
 		[]
 	)
 	const [selected, setSelected] = useState(0)
+	const { ref, onMouseDown } = useSwipeable({
+		onSwipedLeft: () =>
+			setSelected((previous) =>
+				slides?.length === previous + 1 ? 0 : previous + 1
+			),
+		onSwipedRight: () =>
+			setSelected((previous) =>
+				previous === 0 ? (slides?.length ? slides.length - 1 : 0) : previous - 1
+			)
+	})
 
 	useEffect(() => {
 		if (slidesRef[selected]?.current?.clientWidth && carouselRef.current) {
@@ -33,9 +44,16 @@ const Carousel: FC<CarouselProps> = ({ slides }) => {
 			)
 	}, [slides])
 
+	useEffect(() => {
+		ref(carouselRef.current)
+	}, [carouselRef, ref])
+
 	return (
 		<div className="relative h-full">
-			<div ref={carouselRef} className="carousel absolute inset-0">
+			<div
+				ref={carouselRef}
+				onMouseDown={onMouseDown}
+				className="carousel absolute inset-0">
 				{slides?.map((s, i) => (
 					<div
 						ref={slidesRef[i]}
