@@ -51,6 +51,27 @@ export interface Database {
         }
         Relationships: []
       }
+      feedback: {
+        Row: {
+          id: number
+          message: string
+          phone: string
+          user_name: string
+        }
+        Insert: {
+          id?: number
+          message: string
+          phone: string
+          user_name: string
+        }
+        Update: {
+          id?: number
+          message?: string
+          phone?: string
+          user_name?: string
+        }
+        Relationships: []
+      }
       "gallery-category": {
         Row: {
           bucket: string
