@@ -1,6 +1,6 @@
 import client from "../supabaseClient"
 import { PostgrestError } from "@supabase/supabase-js"
-import { useEffect, useState } from "react"
+import { Dispatch, useEffect, useState } from "react"
 
 export interface Category {
 	id: number
@@ -9,54 +9,100 @@ export interface Category {
 	photos: string[]
 }
 
+type SelectedCategory = Category & {
+	noMorePhoto?: boolean
+}
+
 type ReturnGalleryType = {
 	loading: boolean
 	categories?: Category[]
+	selected?: SelectedCategory
+	setSelected: Dispatch<Category>
 	error?: PostgrestError
+	more: (limit: number) => void
 }
 
-function useGallery(limit = 9): ReturnGalleryType {
+function useGallery(limit: number): ReturnGalleryType {
 	const [loading, setLoading] = useState(false)
-	const [categories, setCategories] = useState<Category[]>()
 	const [error, setError] = useState<PostgrestError>()
+	const [categories, setCategories] = useState<Category[]>()
+	const [selected, setSelected] = useState<SelectedCategory>()
+
+	const getPhotos = async (
+		bucket: string,
+		limit?: number,
+		offset?: number
+	): Promise<PostgrestError | Array<string> | undefined> => {
+		const photos = await client.storage.from("gallery").list(bucket, {
+			limit,
+			offset,
+			sortBy: { column: "name", order: "asc" }
+		})
+
+		if (error) return error
+
+		if (photos.data) {
+			return await Promise.all(
+				photos.data.map(
+					async (p) =>
+						await client.storage
+							.from("gallery")
+							.getPublicUrl(`${bucket}/${p.name}`).data.publicUrl
+				)
+			)
+		}
+	}
 
 	const fetcher = async (): Promise<void> => {
 		setLoading(true)
 		const categories = await client.from("gallery-category").select()
-		const map = new Map<string, string[]>()
+		const map = new Map<string, Array<string>>()
+
 		if (categories.error) {
 			setError(categories.error)
 			return
 		}
 
 		for (const item of categories.data) {
-			const photos = await client.storage.from("gallery").list(item.bucket, {
-				limit: limit
-			})
+			const photos = await getPhotos(item.bucket, limit)
 
-			if (photos.data && !error) {
-				const publicPhotos = await Promise.all(
-					photos.data.map(
-						async (p) =>
-							await client.storage
-								.from("gallery")
-								.getPublicUrl(`${item.bucket}/${p.name}`)
-					)
-				)
+			if (Array.isArray(photos)) map.set(item.bucket, photos)
 
-				map.set(
-					item.bucket,
-					publicPhotos.map((p) => p.data.publicUrl)
+			const result = categories.data.map((c) => ({
+				...c,
+				photos: map.get(c.bucket) ?? []
+			}))
+
+			setCategories(result)
+			setSelected(result[0])
+		}
+
+		setLoading(false)
+	}
+
+	const more = async (limit: number): Promise<void> => {
+		setLoading(true)
+
+		if (selected) {
+			const newPhotos = await getPhotos(
+				selected.bucket,
+				limit,
+				selected.photos.length
+			)
+
+			if (Array.isArray(newPhotos)) {
+				setSelected((previous) =>
+					previous
+						? {
+								...previous,
+								photos: [...previous.photos, ...newPhotos],
+								noMorePhoto: newPhotos.length < limit
+						  }
+						: previous
 				)
 			}
 		}
 
-		setCategories(
-			categories.data.map((c) => ({
-				...c,
-				photos: map.get(c.bucket) ?? []
-			}))
-		)
 		setLoading(false)
 	}
 
@@ -67,7 +113,10 @@ function useGallery(limit = 9): ReturnGalleryType {
 	return {
 		categories,
 		loading,
-		error
+		error,
+		more,
+		setSelected,
+		selected
 	}
 }
 
