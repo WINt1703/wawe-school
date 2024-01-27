@@ -11,7 +11,7 @@ const BlogSection: FC = () => {
 		<section className="h-full">
 			<div className="title">Blog</div>
 			<div className="h-full">
-				<Carousel slides={slides} itemTag="blog_item" />
+				<Carousel slides={slides} />
 			</div>
 		</section>
 	)

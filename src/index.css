@@ -15,21 +15,44 @@
 @layer components {
 	.title {
 		position: relative;
-		color: #01353e;
 		font-family: Raleway;
 		font-size: 25px;
 		font-weight: 800;
 		letter-spacing: 0.6px;
 		text-align: center;
 		text-transform: uppercase;
+		@apply text-sky-900;
 	}
 
 	.title::after {
-		color: #00b2a0;
 		font-family: Raleway;
 		font-size: 30px;
 		position: absolute;
 		content: "/";
+		@apply text-teal-400;
+	}
+
+	.description {
+		font-family: Roboto Condensed;
+		font-size: 15px;
+		font-weight: normal;
+		line-height: 18px;
+		letter-spacing: 0.6px;
+		word-break: break-all;
+		@apply text-zinc-900;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		.title {
+			@apply text-teal-400;
+		}
+
+		.description {
+			@apply text-sky-400;
+		}
+		.title::after {
+			@apply text-amber-400;
+		}
 	}
 
 	@media (min-width: 768px) {
@@ -40,15 +63,5 @@
 		.title::after {
 			font-size: 50px;
 		}
-	}
-
-	.description {
-		color: #242121;
-		font-family: Roboto Condensed;
-		font-size: 15px;
-		font-weight: normal;
-		line-height: 18px;
-		letter-spacing: 0.6px;
-		word-break: break-all;
 	}
 }

@@ -29,7 +29,7 @@ const ConquerPeakSection: FC = () => {
 				</p>
 			</div>
 			<img
-				className="invisible h-full object-cover lg:visible"
+				className="hidden h-full object-cover lg:block"
 				src={Peak}
 				alt="surfing peak"
 			/>

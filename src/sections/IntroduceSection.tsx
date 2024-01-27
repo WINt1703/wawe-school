@@ -29,7 +29,7 @@ const IntroduceSection: FC = () => {
 					Contacts
 				</a>
 			</div>
-			<p className="mb-20 grid grow place-content-center text-center text-xs leading-tight lg:text-base">
+			<p className="mb-20 grid grow place-content-center text-center text-xs leading-tight dark:text-black lg:text-base">
 				<span className="block font-raleway text-4xl font-700 uppercase text-[#0D302C] sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl">
 					wawe
 				</span>
