@@ -1,6 +1,7 @@
+import useFeedback, { FormInputs } from "../utils/hooks/useFeedback"
 import Button from "./Button"
 import Input from "./Input"
-import { FC, useState } from "react"
+import { FC } from "react"
 import { useForm } from "react-hook-form"
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
 import { Link } from "react-router-dom"
@@ -9,11 +10,6 @@ const phoneNumberRegex =
 	/^(?:(?:\+|00)\d{1,3}\s?)?[\s().-]?(\d{1,4})[\s().-]?(\d{1,4})[\s().-]?(\d{1,9})$/
 
 const nameRegex = /^[A-Za-z]+([ -]?[A-Za-z]+)*$/
-interface FormInputs {
-	name: string
-	phone: string
-	feedback: string
-}
 
 const Feedback: FC = () => {
 	const {
@@ -23,21 +19,14 @@ const Feedback: FC = () => {
 	} = useForm<FormInputs>({
 		mode: "onChange"
 	})
-	const [sending, setSending] = useState(false)
-
-	const onSubmit = async (data: FormInputs): Promise<void> => {
-		setSending(true)
-		setTimeout(() => {
-			setSending(false)
-		}, 3000)
-	}
+	const { handler, loading } = useFeedback()
 
 	return (
 		<div className="space-y-28">
 			<p className="title">Feedback</p>
 			<div className="flex flex-col items-center justify-center gap-7 lg:flex-row">
 				<form
-					onSubmit={handleSubmit(onSubmit)}
+					onSubmit={handleSubmit(handler)}
 					className="form-control w-full max-w-sm">
 					<Input
 						className="h-9 w-full"
@@ -78,10 +67,10 @@ const Feedback: FC = () => {
 						})}
 					/>
 					<Button
-						loading={sending}
+						loading={loading}
 						className="mx-auto mt-5 lg:mx-0"
 						type="submit"
-						disabled={!isValid}>
+						disabled={!isValid || loading}>
 						Send
 					</Button>
 				</form>
