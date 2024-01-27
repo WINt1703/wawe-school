@@ -1,6 +1,6 @@
 import * as useBlog from "../utils/hooks/useBlog"
 import { ReturnBlogType } from "../utils/hooks/useBlog"
-import Blog from "./Blog"
+import BlogSection from "./BlogSection"
 import { render, screen } from "@testing-library/react"
 import { FC, PropsWithChildren } from "react"
 import { MemoryRouter } from "react-router-dom"
@@ -32,7 +32,7 @@ const wrapper: FC<PropsWithChildren> = ({ children }) => (
 describe("Blog component", () => {
 	test("should render Blog with slides", async () => {
 		jest.spyOn(useBlog, "default").mockReturnValueOnce(hookResult)
-		render(<Blog />, {
+		render(<BlogSection />, {
 			wrapper
 		})
 
@@ -44,7 +44,7 @@ describe("Blog component", () => {
 		jest
 			.spyOn(useBlog, "default")
 			.mockReturnValueOnce({ ...hookResult, slides: undefined })
-		render(<Blog />, { wrapper })
+		render(<BlogSection />, { wrapper })
 
 		const carouselItems = screen.queryAllByTestId(/^blog_item\d/)
 		expect(carouselItems.length).toBe(0)
@@ -54,7 +54,7 @@ describe("Blog component", () => {
 		jest.spyOn(useBlog, "default").mockReturnValueOnce(hookResult)
 		render(
 			<MemoryRouter initialEntries={["/#blog_item2"]}>
-				<Blog />
+				<BlogSection />
 			</MemoryRouter>
 		)
 

@@ -1,4 +1,4 @@
-import Feedback from "./Feedback"
+import FeedbackSection from "./FeedbackSection"
 import { fireEvent, render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { FC, PropsWithChildren } from "react"
@@ -10,7 +10,7 @@ const wrapper: FC<PropsWithChildren> = ({ children }) => (
 
 describe("Feedback component", () => {
 	test("should get error messages from field Name", async () => {
-		render(<Feedback />, {
+		render(<FeedbackSection />, {
 			wrapper
 		})
 
@@ -25,20 +25,20 @@ describe("Feedback component", () => {
 
 		await userEvent.type(nameInput, "4")
 		const incorrectFormat = await screen.findByText(
-			"Name should consist of letters and may include dashes or spaces."
+			"Name should consist of letters"
 		)
 		expect(incorrectFormat).toBeInTheDocument()
 
 		await userEvent.clear(nameInput)
-		await userEvent.type(nameInput, "qwertyuiopasdfghjklzx")
+		await userEvent.type(nameInput, "qwertyuiopasdfghjklzxqwertyy")
 		const maxLength = await screen.findByText(
-			"Max length for name is 20 symbols"
+			"Max length for name is 25 symbols"
 		)
 		expect(maxLength).toBeInTheDocument()
 	})
 
 	test("should get error messages from field Phone", async () => {
-		render(<Feedback />, {
+		render(<FeedbackSection />, {
 			wrapper
 		})
 
@@ -51,15 +51,15 @@ describe("Feedback component", () => {
 		)
 		expect(requiredPhone).toBeInTheDocument()
 
-		await userEvent.type(phoneInput, "test")
+		await userEvent.type(phoneInput, "testsssssssssssssssssssss")
 		const incorrectFormat = await screen.findByText(
-			"Please use the format XXX-XXX-XXXX."
+			"Please enter your phone. Example: 122333444455"
 		)
 		expect(incorrectFormat).toBeInTheDocument()
 	})
 
 	test("should get error message from field Feedback", async () => {
-		render(<Feedback />, {
+		render(<FeedbackSection />, {
 			wrapper
 		})
 
@@ -79,7 +79,7 @@ describe("Feedback component", () => {
 	})
 
 	test("should be submit button disabled", () => {
-		render(<Feedback />, {
+		render(<FeedbackSection />, {
 			wrapper
 		})
 
@@ -91,7 +91,7 @@ describe("Feedback component", () => {
 	})
 
 	test("should submit form", async () => {
-		render(<Feedback />, {
+		render(<FeedbackSection />, {
 			wrapper
 		})
 
@@ -102,7 +102,7 @@ describe("Feedback component", () => {
 		)
 
 		await userEvent.type(nameInput, "Stiv")
-		await userEvent.type(phoneInput, "123-322-3256")
+		await userEvent.type(phoneInput, "123456789000")
 		await userEvent.type(feedbackInput, "Surfing")
 
 		const button = await screen.findByRole("button", {
