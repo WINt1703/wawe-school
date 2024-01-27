@@ -16,7 +16,7 @@ import { FC } from "react"
 
 const App: FC = () => {
 	return (
-		<main className="h-full space-y-32">
+		<main className="h-full space-y-32 text-black dark:text-yellow-400">
 			<IntroduceSection />
 			<AboutSchoolSection />
 			<AdvantagesSchoolSection />

@@ -36,7 +36,7 @@ const AboutSchoolSection: FC = () => {
 					only come across those who, like you, will be interested in one goal -
 					learning to surf.
 				</p>
-				<p className="description max-w-sm">
+				<p className="description max-w-sm ">
 					For now, do you just want to understand what surfing is, or have you
 					already experienced all the delights of riding the waves, but want to
 					raise your level? Our surf school can offer training for any skill

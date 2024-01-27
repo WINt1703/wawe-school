@@ -72,7 +72,7 @@ const Feedback: FC = () => {
 						Send
 					</Button>
 				</form>
-				<p className="w-full max-w-[600px] self-start justify-self-start bg-gray-100 p-12 text-center lg:text-start">
+				<p className="w-full max-w-[600px] self-start justify-self-start bg-gray-100 p-12 text-center dark:bg-gray-800 lg:text-start">
 					Have a question?
 					<br />
 					You can contact us:
