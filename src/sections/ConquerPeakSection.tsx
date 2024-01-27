@@ -1,4 +1,4 @@
-import Peak from "../assets/surfing_peak.svg"
+import Peak from "../assets/surfing_peak.png"
 import { FC } from "react"
 
 const ConquerPeakSection: FC = () => {
