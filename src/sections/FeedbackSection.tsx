@@ -39,7 +39,7 @@ const Feedback: FC = () => {
 	const { handler, loading } = useFeedback()
 
 	return (
-		<section className="space-y-28">
+		<section id="contacts" className="space-y-28">
 			<p className="title">Feedback</p>
 			<div className="flex flex-col items-center justify-center gap-7 lg:flex-row">
 				<form

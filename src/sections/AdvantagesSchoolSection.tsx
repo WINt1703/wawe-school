@@ -8,7 +8,7 @@ import { FC } from "react"
 
 const AdvantagesSchoolSection: FC = () => {
 	return (
-		<section id="service" className="grid place-content-center gap-y-20">
+		<section id="services" className="grid place-content-center gap-y-20">
 			<div className="title">AT SCHOOL YOU WILL GET</div>
 			<div className="flex justify-center">
 				<div className="inline-block space-y-20">
