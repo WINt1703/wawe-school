@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/wawe-school/static/css/main.6663c134.css",
-    "main.js": "/wawe-school/static/js/main.ea8a505c.js",
-    "static/js/469.5dfbbd88.chunk.js": "/wawe-school/static/js/469.5dfbbd88.chunk.js",
-    "static/media/surfing_peak.svg": "/wawe-school/static/media/surfing_peak.5f5a3825193379a658291d2f30f3a5c1.svg",
+    "main.css": "/wawe-school/static/css/main.1d7ce94b.css",
+    "main.js": "/wawe-school/static/js/main.fe627477.js",
+    "static/js/87.baeb8365.chunk.js": "/wawe-school/static/js/87.baeb8365.chunk.js",
+    "static/js/469.ee73b456.chunk.js": "/wawe-school/static/js/469.ee73b456.chunk.js",
     "static/media/surfing-wawe.png": "/wawe-school/static/media/surfing-wawe.b90d7ccdf88850346683.png",
+    "static/media/surfing_peak.png": "/wawe-school/static/media/surfing_peak.a66825b473173a71a1c7.png",
     "static/media/sun_see.svg": "/wawe-school/static/media/sun_see.543ef40259fb6740e403183e3f75f1a2.svg",
     "static/media/surfing.svg": "/wawe-school/static/media/surfing.807af15a1754b752921b2ff881e25d8f.svg",
     "static/media/airplane.svg": "/wawe-school/static/media/airplane.d4262afa0971300cf386b9d09cdf31ea.svg",
@@ -13,12 +14,13 @@
     "static/media/long_wawe.svg": "/wawe-school/static/media/long_wawe.39eb0296ba69326065507af68342a1e8.svg",
     "index.html": "/wawe-school/index.html",
     "static/media/logo.svg": "/wawe-school/static/media/logo.044c3d4d0bc7f599cdbd31b0e63e72ef.svg",
-    "main.6663c134.css.map": "/wawe-school/static/css/main.6663c134.css.map",
-    "main.ea8a505c.js.map": "/wawe-school/static/js/main.ea8a505c.js.map",
-    "469.5dfbbd88.chunk.js.map": "/wawe-school/static/js/469.5dfbbd88.chunk.js.map"
+    "main.1d7ce94b.css.map": "/wawe-school/static/css/main.1d7ce94b.css.map",
+    "main.fe627477.js.map": "/wawe-school/static/js/main.fe627477.js.map",
+    "87.baeb8365.chunk.js.map": "/wawe-school/static/js/87.baeb8365.chunk.js.map",
+    "469.ee73b456.chunk.js.map": "/wawe-school/static/js/469.ee73b456.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6663c134.css",
-    "static/js/main.ea8a505c.js"
+    "static/css/main.1d7ce94b.css",
+    "static/js/main.fe627477.js"
   ]
 }
