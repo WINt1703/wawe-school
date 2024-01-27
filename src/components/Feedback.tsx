@@ -102,16 +102,19 @@ const Feedback: FC = () => {
 			</div>
 			<div className="flex justify-center gap-5 uppercase">
 				<Link
+					target="_blank"
 					className="hover:text-teal-400 active:text-teal-600"
 					to="https://www.instagram.com/">
 					<FaInstagram className="h-10 w-10" />
 				</Link>
 				<Link
+					target="_blank"
 					className="hover:text-teal-400 active:text-teal-600"
 					to="https://www.facebook.com/">
 					<FaFacebook className="h-10 w-10" />
 				</Link>
 				<Link
+					target="_blank"
 					className="hover:text-teal-400 active:text-teal-600"
 					to="https://www.youtube.com/">
 					<FaYoutube className="h-10 w-10" />
